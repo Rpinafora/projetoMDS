@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="188aba31e2b34acba9ccb8c8f1587c6f" Name="Diagram1" ZoomLevel="97" >
+        <EntityTypeShape EntityType="Modelo.Pessoas" Width="1.5" PointX="3.5" PointY="2" />
+        <EntityTypeShape EntityType="Modelo.Pacientes" PointX="0.5" PointY="2" Width="1.5" />
+        <InheritanceConnector EntityType="Modelo.Pacientes" />
+        <EntityTypeShape EntityType="Modelo.Consultas" Width="1.5" PointX="0.5" PointY="5.75" />
+        <AssociationConnector Association="Modelo.ConsultasPacientes" />
+        <EntityTypeShape EntityType="Modelo.Utilizadores" Width="1.5" PointX="3.5" PointY="4.625" />
+        <InheritanceConnector EntityType="Modelo.Utilizadores" />
+        <EntityTypeShape EntityType="Modelo.Especializacoes" Width="1.5" PointX="6" PointY="6.5" />
+        <EntityTypeShape EntityType="Modelo.Doutores" Width="1.5" PointX="3.5" PointY="6.875" />
+        <InheritanceConnector EntityType="Modelo.Doutores" />
+        <AssociationConnector Association="Modelo.DoutoresConsultas" />
+        <AssociationConnector Association="Modelo.DoutoresEspecializacoes" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

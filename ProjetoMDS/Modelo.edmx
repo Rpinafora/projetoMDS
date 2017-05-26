@@ -1,0 +1,384 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Modelo.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ModeloStoreContainer">
+    <EntitySet Name="PessoasSet" EntityType="Modelo.Store.PessoasSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ConsultasSet" EntityType="Modelo.Store.ConsultasSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EspecializacoesSet" EntityType="Modelo.Store.EspecializacoesSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PessoasSet_Pacientes" EntityType="Modelo.Store.PessoasSet_Pacientes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PessoasSet_Utilizadores" EntityType="Modelo.Store.PessoasSet_Utilizadores" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PessoasSet_Doutores" EntityType="Modelo.Store.PessoasSet_Doutores" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DoutoresEspecializacoes" EntityType="Modelo.Store.DoutoresEspecializacoes" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="ConsultasPacientes" Association="Modelo.Store.ConsultasPacientes">
+      <End Role="Consultas" EntitySet="ConsultasSet" />
+      <End Role="Pacientes" EntitySet="PessoasSet_Pacientes" />
+    </AssociationSet>
+    <AssociationSet Name="DoutoresConsultas" Association="Modelo.Store.DoutoresConsultas">
+      <End Role="Doutores" EntitySet="PessoasSet_Doutores" />
+      <End Role="Consultas" EntitySet="ConsultasSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DoutoresEspecializacoes_Doutores" Association="Modelo.Store.FK_DoutoresEspecializacoes_Doutores">
+      <End Role="Doutores" EntitySet="PessoasSet_Doutores" />
+      <End Role="DoutoresEspecializacoes" EntitySet="DoutoresEspecializacoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DoutoresEspecializacoes_Especializacoes" Association="Modelo.Store.FK_DoutoresEspecializacoes_Especializacoes">
+      <End Role="Especializacoes" EntitySet="EspecializacoesSet" />
+      <End Role="DoutoresEspecializacoes" EntitySet="DoutoresEspecializacoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pacientes_inherits_Pessoas" Association="Modelo.Store.FK_Pacientes_inherits_Pessoas">
+      <End Role="Pessoas" EntitySet="PessoasSet" />
+      <End Role="Pacientes" EntitySet="PessoasSet_Pacientes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Utilizadores_inherits_Pessoas" Association="Modelo.Store.FK_Utilizadores_inherits_Pessoas">
+      <End Role="Pessoas" EntitySet="PessoasSet" />
+      <End Role="Utilizadores" EntitySet="PessoasSet_Utilizadores" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Doutores_inherits_Utilizadores" Association="Modelo.Store.FK_Doutores_inherits_Utilizadores">
+      <End Role="Utilizadores" EntitySet="PessoasSet_Utilizadores" />
+      <End Role="Doutores" EntitySet="PessoasSet_Doutores" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="PessoasSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nome" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="dataNascimento" Type="datetime" Nullable="false" />
+    <Property Name="numTelefone" Type="int" Nullable="true" />
+    <Property Name="nif" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ConsultasSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="obs" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="sintomas" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="diagonostico" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PacientesId" Type="int" Nullable="false" />
+    <Property Name="DoutoresId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EspecializacoesSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nome" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="obs" Type="nvarchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="PessoasSet_Pacientes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="peso" Type="decimal" Nullable="false" />
+    <Property Name="altura" Type="decimal" Nullable="false" />
+    <Property Name="obsClinicas" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="tipoSanguineo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PessoasSet_Utilizadores">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="email" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="funcao" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PessoasSet_Doutores">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DoutoresEspecializacoes">
+    <Key>
+      <PropertyRef Name="Doutores_Id" />
+      <PropertyRef Name="Especializacoes_Id" />
+    </Key>
+    <Property Name="Doutores_Id" Type="int" Nullable="false" />
+    <Property Name="Especializacoes_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="ConsultasPacientes">
+    <End Role="Consultas" Type="Modelo.Store.ConsultasSet" Multiplicity="*" />
+    <End Role="Pacientes" Type="Modelo.Store.PessoasSet_Pacientes" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Pacientes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Consultas">
+        <PropertyRef Name="PacientesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DoutoresConsultas">
+    <End Role="Doutores" Type="Modelo.Store.PessoasSet_Doutores" Multiplicity="1" />
+    <End Role="Consultas" Type="Modelo.Store.ConsultasSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Doutores">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Consultas">
+        <PropertyRef Name="DoutoresId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DoutoresEspecializacoes_Doutores">
+    <End Role="Doutores" Type="Modelo.Store.PessoasSet_Doutores" Multiplicity="1" />
+    <End Role="DoutoresEspecializacoes" Type="Modelo.Store.DoutoresEspecializacoes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Doutores">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DoutoresEspecializacoes">
+        <PropertyRef Name="Doutores_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DoutoresEspecializacoes_Especializacoes">
+    <End Role="DoutoresEspecializacoes" Type="Modelo.Store.DoutoresEspecializacoes" Multiplicity="*" />
+    <End Role="Especializacoes" Type="Modelo.Store.EspecializacoesSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Especializacoes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DoutoresEspecializacoes">
+        <PropertyRef Name="Especializacoes_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pacientes_inherits_Pessoas">
+    <End Role="Pessoas" Type="Modelo.Store.PessoasSet" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Pacientes" Type="Modelo.Store.PessoasSet_Pacientes" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Pacientes">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Utilizadores_inherits_Pessoas">
+    <End Role="Pessoas" Type="Modelo.Store.PessoasSet" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Utilizadores" Type="Modelo.Store.PessoasSet_Utilizadores" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Utilizadores">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Doutores_inherits_Utilizadores">
+    <End Role="Utilizadores" Type="Modelo.Store.PessoasSet_Utilizadores" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Doutores" Type="Modelo.Store.PessoasSet_Doutores" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Utilizadores">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Doutores">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Modelo" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="ModeloContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="PessoasSet" EntityType="Modelo.Pessoas" />
+          <EntitySet Name="ConsultasSet" EntityType="Modelo.Consultas" />
+          <AssociationSet Name="ConsultasPacientes" Association="Modelo.ConsultasPacientes">
+            <End Role="Consultas" EntitySet="ConsultasSet" />
+            <End Role="Pacientes" EntitySet="PessoasSet" />
+          </AssociationSet>
+          <EntitySet Name="EspecializacoesSet" EntityType="Modelo.Especializacoes" />
+          <AssociationSet Name="DoutoresConsultas" Association="Modelo.DoutoresConsultas">
+            <End Role="Doutores" EntitySet="PessoasSet" />
+            <End Role="Consultas" EntitySet="ConsultasSet" />
+          </AssociationSet>
+          <AssociationSet Name="DoutoresEspecializacoes" Association="Modelo.DoutoresEspecializacoes">
+            <End Role="Doutores" EntitySet="PessoasSet" />
+            <End Role="Especializacoes" EntitySet="EspecializacoesSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Pessoas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nome" Type="String" Nullable="false" />
+          <Property Name="dataNascimento" Type="DateTime" Nullable="false" />
+          <Property Name="numTelefone" Type="Int32" Nullable="true" />
+          <Property Name="nif" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Pacientes" BaseType="Modelo.Pessoas">
+          <Property Name="peso" Nullable="false" Type="Decimal" />
+          <Property Name="altura" Nullable="false" Type="Decimal" />
+          <Property Name="obsClinicas" Nullable="true" Type="String" />
+          <Property Name="tipoSanguineo" Nullable="false" Type="String" />
+          <NavigationProperty Name="Consultas" Relationship="Modelo.ConsultasPacientes" FromRole="Pacientes" ToRole="Consultas" />
+        </EntityType>
+        <EntityType Name="Consultas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="obs" Type="String" Nullable="true" />
+          <Property Name="sintomas" Type="String" Nullable="false" />
+          <Property Name="diagonostico" Type="String" Nullable="false" />
+          <NavigationProperty Name="Pacientes" Relationship="Modelo.ConsultasPacientes" FromRole="Consultas" ToRole="Pacientes" />
+          <Property Name="PacientesId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Doutores" Relationship="Modelo.DoutoresConsultas" FromRole="Consultas" ToRole="Doutores" />
+          <Property Name="DoutoresId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="ConsultasPacientes">
+          <End Type="Modelo.Consultas" Role="Consultas" Multiplicity="*" />
+          <End Type="Modelo.Pacientes" Role="Pacientes" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Pacientes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Consultas">
+              <PropertyRef Name="PacientesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Utilizadores" BaseType="Modelo.Pessoas" >
+          <Property Name="email" Type="String" Nullable="true" />
+          <Property Name="password" Type="String" Nullable="false" />
+          <Property Name="funcao" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Especializacoes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nome" Type="String" Nullable="false" />
+          <Property Name="obs" Type="String" Nullable="true" />
+          <NavigationProperty Name="Doutores" Relationship="Modelo.DoutoresEspecializacoes" FromRole="Especializacoes" ToRole="Doutores" />
+        </EntityType>
+        <EntityType Name="Doutores" BaseType="Modelo.Utilizadores" >
+          <NavigationProperty Name="Consultas" Relationship="Modelo.DoutoresConsultas" FromRole="Doutores" ToRole="Consultas" />
+          <NavigationProperty Name="Especializacoes" Relationship="Modelo.DoutoresEspecializacoes" FromRole="Doutores" ToRole="Especializacoes" />
+        </EntityType>
+        <Association Name="DoutoresConsultas">
+          <End Type="Modelo.Doutores" Role="Doutores" Multiplicity="1" />
+          <End Type="Modelo.Consultas" Role="Consultas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Doutores">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Consultas">
+              <PropertyRef Name="DoutoresId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DoutoresEspecializacoes">
+          <End Type="Modelo.Doutores" Role="Doutores" Multiplicity="*" />
+          <End Type="Modelo.Especializacoes" Role="Especializacoes" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModeloStoreContainer" CdmEntityContainer="ModeloContainer">
+    <EntitySetMapping Name="PessoasSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo.Pessoas)">
+        <MappingFragment StoreEntitySet="PessoasSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="dataNascimento" ColumnName="dataNascimento" />
+          <ScalarProperty Name="numTelefone" ColumnName="numTelefone" />
+          <ScalarProperty Name="nif" ColumnName="nif" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo.Pacientes)">
+        <MappingFragment StoreEntitySet="PessoasSet_Pacientes">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="peso" ColumnName="peso" />
+          <ScalarProperty Name="altura" ColumnName="altura" />
+          <ScalarProperty Name="obsClinicas" ColumnName="obsClinicas" />
+          <ScalarProperty Name="tipoSanguineo" ColumnName="tipoSanguineo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo.Utilizadores)">
+        <MappingFragment StoreEntitySet="PessoasSet_Utilizadores">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="funcao" ColumnName="funcao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo.Doutores)">
+        <MappingFragment StoreEntitySet="PessoasSet_Doutores">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ConsultasSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo.Consultas)">
+        <MappingFragment StoreEntitySet="ConsultasSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="obs" ColumnName="obs" />
+          <ScalarProperty Name="sintomas" ColumnName="sintomas" />
+          <ScalarProperty Name="diagonostico" ColumnName="diagonostico" />
+          <ScalarProperty Name="PacientesId" ColumnName="PacientesId" />
+          <ScalarProperty Name="DoutoresId" ColumnName="DoutoresId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EspecializacoesSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Modelo.Especializacoes)">
+        <MappingFragment StoreEntitySet="EspecializacoesSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="obs" ColumnName="obs" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="DoutoresEspecializacoes" TypeName="Modelo.DoutoresEspecializacoes" StoreEntitySet="DoutoresEspecializacoes">
+      <EndProperty Name="Doutores">
+        <ScalarProperty Name="Id" ColumnName="Doutores_Id" />
+      </EndProperty>
+      <EndProperty Name="Especializacoes">
+        <ScalarProperty Name="Id" ColumnName="Especializacoes_Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
