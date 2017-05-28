@@ -19,7 +19,7 @@ namespace Prototipo_Não_Funcional_MDS
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DetalhesConsultaForm form = new DetalhesConsultaForm();
+            DetalhesConsultaForm form = new DetalhesConsultaForm((Consultas)listBox1.SelectedItem);
             form.ShowDialog();
         }
 

@@ -30,64 +30,64 @@
         {
             this.button3 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lbx_consultas = new System.Windows.Forms.ListBox();
             this.button4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(139, 33);
+            this.button3.Location = new System.Drawing.Point(185, 41);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(165, 23);
+            this.button3.Size = new System.Drawing.Size(220, 28);
             this.button3.TabIndex = 9;
             this.button3.Text = "Eliminar Agendamento";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button3.Click += new System.EventHandler(this.EventoEliminarConsulta);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 13);
+            this.label1.Location = new System.Drawing.Point(17, 16);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 13);
+            this.label1.Size = new System.Drawing.Size(150, 17);
             this.label1.TabIndex = 6;
             this.label1.Text = "Consultas Agendadas:";
             // 
-            // listBox1
+            // lbx_consultas
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Items.AddRange(new object[] {
-            "Exemplo 1",
-            "Exemplo 2",
-            "Exemplo 3",
-            "Exemplo 4",
-            "Exemplo 5"});
-            this.listBox1.Location = new System.Drawing.Point(13, 33);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 212);
-            this.listBox1.TabIndex = 5;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.lbx_consultas.FormattingEnabled = true;
+            this.lbx_consultas.ItemHeight = 16;
+            this.lbx_consultas.Location = new System.Drawing.Point(17, 41);
+            this.lbx_consultas.Margin = new System.Windows.Forms.Padding(4);
+            this.lbx_consultas.Name = "lbx_consultas";
+            this.lbx_consultas.Size = new System.Drawing.Size(159, 260);
+            this.lbx_consultas.TabIndex = 5;
+            this.lbx_consultas.SelectedIndexChanged += new System.EventHandler(this.EventoMostrarDadosConsulta);
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(139, 222);
+            this.button4.Location = new System.Drawing.Point(185, 273);
+            this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(165, 23);
+            this.button4.Size = new System.Drawing.Size(220, 28);
             this.button4.TabIndex = 10;
             this.button4.Text = "Arquivo de Consultas";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // GestaoConsultasAgendadas
+            // GestaoConsultasAgendadasForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(324, 261);
+            this.ClientSize = new System.Drawing.Size(432, 321);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.listBox1);
-            this.Name = "GestaoConsultasAgendadas";
+            this.Controls.Add(this.lbx_consultas);
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "GestaoConsultasAgendadasForm";
             this.Text = "GestaoConsultasAgendadas";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -98,7 +98,7 @@
 
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lbx_consultas;
         private System.Windows.Forms.Button button4;
     }
 }

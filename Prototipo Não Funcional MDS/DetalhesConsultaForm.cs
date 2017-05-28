@@ -12,9 +12,17 @@ namespace Prototipo_Não_Funcional_MDS
 {
     public partial class DetalhesConsultaForm : Form
     {
-        public DetalhesConsultaForm()
+        Consultas detalhes_consulta;
+        public DetalhesConsultaForm(Consultas consulta_selecionada)
         {
             InitializeComponent();
+            detalhes_consulta = consulta_selecionada;
+            MostrarDadosConsulta();
+        }
+       
+        private void MostrarDadosConsulta()
+        {
+            lbx_detalhes_paciente.Items.Add(detalhes_consulta.Pacientes);
         }
 
         private void button1_Click(object sender, EventArgs e)
