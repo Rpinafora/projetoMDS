@@ -123,6 +123,12 @@
     <Compile Include="Adicionar\EditarEspecializacao.Designer.cs">
       <DependentUpon>EditarEspecializacao.cs</DependentUpon>
     </Compile>
+    <Compile Include="Adicionar\EditarPacienteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adicionar\EditarPacienteForm.Designer.cs">
+      <DependentUpon>EditarPacienteForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Especializacoes.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
@@ -200,6 +206,7 @@
     </Compile>
     <Compile Include="Partial Classes\Doutores.cs" />
     <Compile Include="Partial Classes\Especializacoes.cs" />
+    <Compile Include="Partial Classes\Pacientes.cs" />
     <Compile Include="Pessoas.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
@@ -225,6 +232,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Adicionar\EditarDoutorForm.resx">
       <DependentUpon>EditarDoutorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Adicionar\EditarPacienteForm.resx">
+      <DependentUpon>EditarPacienteForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
