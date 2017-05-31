@@ -29,23 +29,24 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdicionarConsultaForm));
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listBox_pacientes = new System.Windows.Forms.ListBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button_registarConsulta = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // listBox1
+            // listBox_pacientes
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Items.AddRange(new object[] {
-            resources.GetString("listBox1.Items"),
-            resources.GetString("listBox1.Items1"),
-            resources.GetString("listBox1.Items2"),
-            resources.GetString("listBox1.Items3"),
-            resources.GetString("listBox1.Items4"),
-            resources.GetString("listBox1.Items5")});
-            resources.ApplyResources(this.listBox1, "listBox1");
-            this.listBox1.Name = "listBox1";
+            this.listBox_pacientes.FormattingEnabled = true;
+            this.listBox_pacientes.Items.AddRange(new object[] {
+            resources.GetString("listBox_pacientes.Items"),
+            resources.GetString("listBox_pacientes.Items1"),
+            resources.GetString("listBox_pacientes.Items2"),
+            resources.GetString("listBox_pacientes.Items3"),
+            resources.GetString("listBox_pacientes.Items4"),
+            resources.GetString("listBox_pacientes.Items5")});
+            resources.ApplyResources(this.listBox_pacientes, "listBox_pacientes");
+            this.listBox_pacientes.Name = "listBox_pacientes";
+            this.listBox_pacientes.SelectedIndexChanged += new System.EventHandler(this.listBox_pacientes_SelectedIndexChanged);
             // 
             // textBox1
             // 
@@ -57,7 +58,7 @@
             resources.ApplyResources(this.button_registarConsulta, "button_registarConsulta");
             this.button_registarConsulta.Name = "button_registarConsulta";
             this.button_registarConsulta.UseVisualStyleBackColor = true;
-            this.button_registarConsulta.Click += new System.EventHandler(this.button1_Click);
+            this.button_registarConsulta.Click += new System.EventHandler(this.button_registarConsulta_Click);
             // 
             // AdicionarConsultaForm
             // 
@@ -65,7 +66,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.button_registarConsulta);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.listBox_pacientes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -77,7 +78,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox listBox_pacientes;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button_registarConsulta;
     }
