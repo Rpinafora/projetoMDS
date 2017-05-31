@@ -28,42 +28,42 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button_editarPaciente = new System.Windows.Forms.Button();
+            this.button_adicionarPaciente = new System.Windows.Forms.Button();
+            this.button_eliminarPaciente = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
-            // button3
+            // button_editarPaciente
             // 
-            this.button3.Location = new System.Drawing.Point(138, 52);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(134, 23);
-            this.button3.TabIndex = 14;
-            this.button3.Text = "Editar Paciente";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button_editarPaciente.Location = new System.Drawing.Point(138, 52);
+            this.button_editarPaciente.Name = "button_editarPaciente";
+            this.button_editarPaciente.Size = new System.Drawing.Size(134, 23);
+            this.button_editarPaciente.TabIndex = 14;
+            this.button_editarPaciente.Text = "Editar Paciente";
+            this.button_editarPaciente.UseVisualStyleBackColor = true;
+            this.button_editarPaciente.Click += new System.EventHandler(this.button_editarPaciente_Click);
             // 
-            // button2
+            // button_adicionarPaciente
             // 
-            this.button2.Location = new System.Drawing.Point(138, 23);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(134, 23);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "Adicionar Paciente";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button_adicionarPaciente.Location = new System.Drawing.Point(138, 23);
+            this.button_adicionarPaciente.Name = "button_adicionarPaciente";
+            this.button_adicionarPaciente.Size = new System.Drawing.Size(134, 23);
+            this.button_adicionarPaciente.TabIndex = 13;
+            this.button_adicionarPaciente.Text = "Adicionar Paciente";
+            this.button_adicionarPaciente.UseVisualStyleBackColor = true;
+            this.button_adicionarPaciente.Click += new System.EventHandler(this.button_adicionarPaciente_Click);
             // 
-            // button1
+            // button_eliminarPaciente
             // 
-            this.button1.Location = new System.Drawing.Point(138, 81);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(134, 23);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Eliminar Paciente";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button_eliminarPaciente.Location = new System.Drawing.Point(138, 81);
+            this.button_eliminarPaciente.Name = "button_eliminarPaciente";
+            this.button_eliminarPaciente.Size = new System.Drawing.Size(134, 23);
+            this.button_eliminarPaciente.TabIndex = 12;
+            this.button_eliminarPaciente.Text = "Eliminar Paciente";
+            this.button_eliminarPaciente.UseVisualStyleBackColor = true;
+            this.button_eliminarPaciente.Click += new System.EventHandler(this.button_eliminarPaciente_Click);
             // 
             // textBox1
             // 
@@ -88,17 +88,17 @@
             this.listBox1.Size = new System.Drawing.Size(120, 186);
             this.listBox1.TabIndex = 10;
             // 
-            // GestaoPacientes
+            // GestaoPacientesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button_editarPaciente);
+            this.Controls.Add(this.button_adicionarPaciente);
+            this.Controls.Add(this.button_eliminarPaciente);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.listBox1);
-            this.Name = "GestaoPacientes";
+            this.Name = "GestaoPacientesForm";
             this.Text = "GestaoPacientes";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -107,9 +107,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button_editarPaciente;
+        private System.Windows.Forms.Button button_adicionarPaciente;
+        private System.Windows.Forms.Button button_eliminarPaciente;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ListBox listBox1;
     }

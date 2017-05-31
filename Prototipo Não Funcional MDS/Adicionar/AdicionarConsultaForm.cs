@@ -23,10 +23,6 @@ namespace Prototipo_Não_Funcional_MDS
             form.ShowDialog();
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-            GestaoPacientesForm form = new GestaoPacientesForm();
-            form.ShowDialog();
-        }
+        
     }
 }

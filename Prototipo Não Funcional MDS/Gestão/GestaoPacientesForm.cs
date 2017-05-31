@@ -12,26 +12,35 @@ namespace Prototipo_Não_Funcional_MDS
 {
     public partial class GestaoPacientesForm : Form
     {
+        private ModeloContainer container;
+        
         public GestaoPacientesForm()
         {
             InitializeComponent();
+            container = new ModeloContainer();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button_adicionarPaciente_Click(object sender, EventArgs e)
         {
             AdicionarPacienteForm form = new AdicionarPacienteForm();
-            form.ShowDialog();
+            DialogResult resultado = form.ShowDialog();
+
+            if (resultado == DialogResult.OK)
+            {
+                container.PessoasSet.Add(form.novoPaciente);                  
+               
+                container.SaveChanges();
+            }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button_editarPaciente_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_eliminarPaciente_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Tem acerteza que pretende eliminar?");
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            AdicionarPacienteForm form = new AdicionarPacienteForm();
-            form.ShowDialog();
         }
     }
 }

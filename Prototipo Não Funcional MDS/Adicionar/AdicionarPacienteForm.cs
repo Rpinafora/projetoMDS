@@ -10,81 +10,28 @@ using System.Windows.Forms;
 
 namespace Prototipo_Não_Funcional_MDS
 {
+    
     public partial class AdicionarPacienteForm : Form
     {
+        public Pacientes novoPaciente;
         public AdicionarPacienteForm()
         {
             InitializeComponent();
         }
 
-        private void label5_Click(object sender, EventArgs e)
+        private void button_registar_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void AdicionarPaciente_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
+            novoPaciente = new Pacientes
+            {
+                nome = textBox_nome.Text,
+                dataNascimento = dateTimePicker_dataNascimento.Value,
+                numTelefone = Int32.Parse(textBox_numTelefone.Text),
+                nif = textBox_nif.Text,
+                peso = numericUpDown_peso.Value,
+                altura = numericUpDown_altura.Value,
+                tipoSanguineo = (string)comboBox_tipoSanguineo.SelectedItem
+            };
+            DialogResult = DialogResult.OK;
         }
     }
 }
