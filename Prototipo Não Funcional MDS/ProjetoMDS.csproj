@@ -87,6 +87,12 @@
     <Compile Include="Adicionar\AdicionarPacienteForm.Designer.cs">
       <DependentUpon>AdicionarPacienteForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Adicionar\EditarDoutorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adicionar\EditarDoutorForm.Designer.cs">
+      <DependentUpon>EditarDoutorForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,12 @@
     </Compile>
     <Compile Include="Doutores.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Adicionar\EditarEspecializacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adicionar\EditarEspecializacao.Designer.cs">
+      <DependentUpon>EditarEspecializacao.cs</DependentUpon>
     </Compile>
     <Compile Include="Especializacoes.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
@@ -186,6 +198,8 @@
     <Compile Include="Pacientes.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
+    <Compile Include="Partial Classes\Doutores.cs" />
+    <Compile Include="Partial Classes\Especializacoes.cs" />
     <Compile Include="Pessoas.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
@@ -209,6 +223,9 @@
     <EmbeddedResource Include="Adicionar\AdicionarPacienteForm.resx">
       <DependentUpon>AdicionarPacienteForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Adicionar\EditarDoutorForm.resx">
+      <DependentUpon>EditarDoutorForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -217,6 +234,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DetalhesConsultaForm.resx">
       <DependentUpon>DetalhesConsultaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Adicionar\EditarEspecializacao.resx">
+      <DependentUpon>EditarEspecializacao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FuncionarioForm.resx">
       <DependentUpon>FuncionarioForm.cs</DependentUpon>

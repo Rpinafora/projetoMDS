@@ -10,28 +10,31 @@ using System.Windows.Forms;
 
 namespace Prototipo_Não_Funcional_MDS
 {
-    public partial class AdicionarEspecializacaoForm : Form
+    public partial class EditarEspecializacao : Form
     {
-        public Especializacoes novaEspecializacao;
-        public AdicionarEspecializacaoForm()
+        public Especializacoes especializacao;
+
+        public EditarEspecializacao()
         {
             InitializeComponent();
         }
 
-        private void button_adicionar_Click(object sender, EventArgs e)
+        private void btn_editar_Click(object sender, EventArgs e)
         {
             if (txt_nome.TextLength > 0)
             {
-                novaEspecializacao = new Especializacoes
-                {
-                    nome = txt_nome.Text,
-                    obs = txt_obs.Text
-                };
+                especializacao.nome = txt_nome.Text;
+                especializacao.obs = txt_obs.Text;
                 DialogResult = DialogResult.OK;
-                Close();
             }
             else
                 MessageBox.Show("Por favor introduza o nome da especialização");
+        }
+
+        private void EditarEspecializacao_Load(object sender, EventArgs e)
+        {
+            txt_nome.Text = especializacao.nome;
+            txt_obs.Text = especializacao.obs;
         }
     }
 }

@@ -21,6 +21,8 @@ namespace Prototipo_Não_Funcional_MDS
             this.Especializacoes = new HashSet<Especializacoes>();
         }
     
+        public System.DateTime checkin { get; set; }
+        public System.DateTime checkout { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Consultas> Consultas { get; set; }

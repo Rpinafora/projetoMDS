@@ -12,9 +12,15 @@ namespace Prototipo_Não_Funcional_MDS
 {
     public partial class GestaoDoutoresForm : Form
     {
+
+        private ModeloContainer container;
+        private Doutores doutorSelecionado;
+
         public GestaoDoutoresForm()
         {
             InitializeComponent();
+            container = new ModeloContainer();
+            RefreshListaDoutores();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -23,21 +29,80 @@ namespace Prototipo_Não_Funcional_MDS
             form.ShowDialog();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void EventoEliminarDoutor(object sender, EventArgs e)
         {
-            AdicionarDoutorForm form = new AdicionarDoutorForm();
-            form.ShowDialog();
+            if (doutorSelecionado != null)
+            {
+                DialogResult confirmar = MessageBox.Show("Eliminar o doutor '" + doutorSelecionado.nome + "'?", "Eliminar Doutor", MessageBoxButtons.YesNo);
+                if (confirmar == DialogResult.Yes)
+                {
+                    container.PessoasSet.Remove(doutorSelecionado);
+                    container.SaveChanges();
+                    RefreshListaDoutores();
+                    doutorSelecionado = null;
+                }
+            }
+            else
+                MessageBox.Show("Por favor selecione o doutor que pretende eliminar");
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void EventoEditarDoutor(object sender, EventArgs e)
         {
-            MessageBox.Show("Tem acerteza que pretende eliminar?");
+            if (doutorSelecionado != null)
+            {
+                EditarDoutorForm form = new EditarDoutorForm();
+                form.container = container;
+                form.doutor = doutorSelecionado;
+                form.ShowDialog();
+                if (form.DialogResult == DialogResult.OK)
+                {
+                    container.SaveChanges();
+                    RefreshListaDoutores();
+                }
+            }
+            else
+                MessageBox.Show("Por favor selecione o doutor que pretende editar");
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void EventoAdicionarDoutor(object sender, EventArgs e)
         {
             AdicionarDoutorForm form = new AdicionarDoutorForm();
+            form.container = container;
             form.ShowDialog();
+            if (form.DialogResult == DialogResult.OK && form.novoDoutor != null)
+            {
+                container.PessoasSet.Add(form.novoDoutor);
+                container.SaveChanges();
+                RefreshListaDoutores();
+            }
+        }
+
+        private void RefreshListaDoutores()
+        {
+            lbx_doutores.Items.Clear();
+            lbx_doutores.Items.AddRange(container.PessoasSet.OfType<Doutores>().ToArray());
+        }
+
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            doutorSelecionado = (Doutores)lbx_doutores.SelectedItem;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            lbx_doutores.Items.Clear();
+            if (txt_procurar.TextLength > 0)
+            {
+                foreach (Doutores doutor in container.PessoasSet)
+                {
+
+                    if (doutor.nome.Contains(txt_procurar.Text))
+                        lbx_doutores.Items.Add(doutor);
+                }
+            }
+            else
+                RefreshListaDoutores();
         }
     }
 }

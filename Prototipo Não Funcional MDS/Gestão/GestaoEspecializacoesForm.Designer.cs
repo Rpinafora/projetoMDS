@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button_adicionarEspecializacao = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.btn_editar = new System.Windows.Forms.Button();
+            this.btn_adicionar = new System.Windows.Forms.Button();
+            this.btn_eliminar = new System.Windows.Forms.Button();
+            this.txt_procurar = new System.Windows.Forms.TextBox();
+            this.lbx_especializacoes = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // button4
@@ -46,56 +46,59 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button3
+            // btn_editar
             // 
-            this.button3.Location = new System.Drawing.Point(138, 52);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(134, 23);
-            this.button3.TabIndex = 25;
-            this.button3.Text = "Editar Especialização";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn_editar.Location = new System.Drawing.Point(138, 52);
+            this.btn_editar.Name = "btn_editar";
+            this.btn_editar.Size = new System.Drawing.Size(134, 23);
+            this.btn_editar.TabIndex = 25;
+            this.btn_editar.Text = "Editar Especialização";
+            this.btn_editar.UseVisualStyleBackColor = true;
+            this.btn_editar.Click += new System.EventHandler(this.EventoEditarEspecializacao);
             // 
-            // button_adicionarEspecializacao
+            // btn_adicionar
             // 
-            this.button_adicionarEspecializacao.Location = new System.Drawing.Point(138, 23);
-            this.button_adicionarEspecializacao.Name = "button_adicionarEspecializacao";
-            this.button_adicionarEspecializacao.Size = new System.Drawing.Size(134, 23);
-            this.button_adicionarEspecializacao.TabIndex = 24;
-            this.button_adicionarEspecializacao.Text = "Adicionar Especialização";
-            this.button_adicionarEspecializacao.UseVisualStyleBackColor = true;
-            this.button_adicionarEspecializacao.Click += new System.EventHandler(this.button_adicionarEspecializacao_Click);
+            this.btn_adicionar.Location = new System.Drawing.Point(138, 23);
+            this.btn_adicionar.Name = "btn_adicionar";
+            this.btn_adicionar.Size = new System.Drawing.Size(134, 23);
+            this.btn_adicionar.TabIndex = 24;
+            this.btn_adicionar.Text = "Adicionar Especialização";
+            this.btn_adicionar.UseVisualStyleBackColor = true;
+            this.btn_adicionar.Click += new System.EventHandler(this.EventoAdicionarEspecializacao);
             // 
-            // button1
+            // btn_eliminar
             // 
-            this.button1.Location = new System.Drawing.Point(138, 81);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(134, 23);
-            this.button1.TabIndex = 23;
-            this.button1.Text = "Eliminar Especialização";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_eliminar.Location = new System.Drawing.Point(138, 81);
+            this.btn_eliminar.Name = "btn_eliminar";
+            this.btn_eliminar.Size = new System.Drawing.Size(134, 23);
+            this.btn_eliminar.TabIndex = 23;
+            this.btn_eliminar.Text = "Eliminar Especialização";
+            this.btn_eliminar.UseVisualStyleBackColor = true;
+            this.btn_eliminar.Click += new System.EventHandler(this.EventoEliminarEspecializacao);
             // 
-            // textBox1
+            // txt_procurar
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 25);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(120, 20);
-            this.textBox1.TabIndex = 22;
-            this.textBox1.Text = "Procurar Especialização";
+            this.txt_procurar.Location = new System.Drawing.Point(12, 25);
+            this.txt_procurar.Name = "txt_procurar";
+            this.txt_procurar.Size = new System.Drawing.Size(120, 20);
+            this.txt_procurar.TabIndex = 22;
+            this.txt_procurar.TextChanged += new System.EventHandler(this.txt_procurar_TextChanged);
             // 
-            // listBox1
+            // lbx_especializacoes
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Items.AddRange(new object[] {
+            this.lbx_especializacoes.FormattingEnabled = true;
+            this.lbx_especializacoes.Items.AddRange(new object[] {
             "Especialização 1",
             "Especialização 2",
             "Especialização 3",
             "Especialização 4",
             "Especialização 5",
             "Especialização 6"});
-            this.listBox1.Location = new System.Drawing.Point(12, 51);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 186);
-            this.listBox1.TabIndex = 21;
+            this.lbx_especializacoes.Location = new System.Drawing.Point(12, 51);
+            this.lbx_especializacoes.Name = "lbx_especializacoes";
+            this.lbx_especializacoes.Size = new System.Drawing.Size(120, 186);
+            this.lbx_especializacoes.TabIndex = 21;
+            this.lbx_especializacoes.SelectedIndexChanged += new System.EventHandler(this.lbx_especializacoes_SelectedIndexChanged);
             // 
             // GestaoEspecializacoesForm
             // 
@@ -103,11 +106,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button_adicionarEspecializacao);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.btn_editar);
+            this.Controls.Add(this.btn_adicionar);
+            this.Controls.Add(this.btn_eliminar);
+            this.Controls.Add(this.txt_procurar);
+            this.Controls.Add(this.lbx_especializacoes);
             this.Name = "GestaoEspecializacoesForm";
             this.Text = "GestaoEspecializacoes";
             this.ResumeLayout(false);
@@ -118,10 +121,10 @@
         #endregion
 
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button_adicionarEspecializacao;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button btn_editar;
+        private System.Windows.Forms.Button btn_adicionar;
+        private System.Windows.Forms.Button btn_eliminar;
+        private System.Windows.Forms.TextBox txt_procurar;
+        private System.Windows.Forms.ListBox lbx_especializacoes;
     }
 }

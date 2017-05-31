@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 05/28/2017 12:30:12
--- Generated from EDMX file: C:\Users\User\Desktop\projetoMDS\Prototipo Não Funcional MDS\Modelo.edmx
+-- Date Created: 05/31/2017 14:18:54
+-- Generated from EDMX file: C:\Users\Carlos-PC\Documents\GitHub\projetoMDS\Prototipo Não Funcional MDS\Modelo.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -119,6 +119,8 @@ GO
 
 -- Creating table 'PessoasSet_Doutores'
 CREATE TABLE [dbo].[PessoasSet_Doutores] (
+    [checkin] datetime  NOT NULL,
+    [checkout] datetime  NOT NULL,
     [Id] int  NOT NULL
 );
 GO

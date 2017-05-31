@@ -94,6 +94,8 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
+    <Property Name="checkin" Type="datetime" Nullable="false" />
+    <Property Name="checkout" Type="datetime" Nullable="false" />
     <Property Name="Id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="DoutoresEspecializacoes">
@@ -274,6 +276,8 @@
         <EntityType Name="Doutores" BaseType="Modelo.Utilizadores" >
           <NavigationProperty Name="Consultas" Relationship="Modelo.DoutoresConsultas" FromRole="Doutores" ToRole="Consultas" />
           <NavigationProperty Name="Especializacoes" Relationship="Modelo.DoutoresEspecializacoes" FromRole="Doutores" ToRole="Especializacoes" />
+          <Property Name="checkin" Type="DateTime" Nullable="false" />
+          <Property Name="checkout" Type="DateTime" Nullable="false" />
         </EntityType>
         <Association Name="DoutoresConsultas">
           <End Type="Modelo.Doutores" Role="Doutores" Multiplicity="1" />
@@ -327,6 +331,8 @@
       <EntityTypeMapping TypeName="IsTypeOf(Modelo.Doutores)">
         <MappingFragment StoreEntitySet="PessoasSet_Doutores">
           <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="checkin" ColumnName="checkin" />
+          <ScalarProperty Name="checkout" ColumnName="checkout" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
