@@ -21,17 +21,29 @@ namespace Prototipo_Não_Funcional_MDS
 
         private void button_registar_Click(object sender, EventArgs e)
         {
-            novoPaciente = new Pacientes
+
+            int numero;
+            bool result = Int32.TryParse(textBox_numTelefone.Text, out numero);
+
+            if (result)
             {
-                nome = textBox_nome.Text,
-                dataNascimento = dateTimePicker_dataNascimento.Value,
-                numTelefone = Int32.Parse(textBox_numTelefone.Text),
-                nif = textBox_nif.Text,
-                peso = numericUpDown_peso.Value,
-                altura = numericUpDown_altura.Value,
-                tipoSanguineo = (string)comboBox_tipoSanguineo.SelectedItem
-            };
-            DialogResult = DialogResult.OK;
+                novoPaciente = new Pacientes
+                {
+                    nome = textBox_nome.Text,
+                    dataNascimento = dateTimePicker_dataNascimento.Value,
+                    numTelefone = numero,
+                    nif = textBox_nif.Text,
+                    peso = numericUpDown_peso.Value,
+                    altura = numericUpDown_altura.Value,
+                    tipoSanguineo = (string)comboBox_tipoSanguineo.SelectedItem
+                };
+                DialogResult = DialogResult.OK;
+            }
+            else
+            {
+                MessageBox.Show("Numero de telefone inválido");
+            }
+            
         }
     }
 }
