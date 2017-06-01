@@ -46,7 +46,7 @@
             this.textBox_dadosPaciente.Location = new System.Drawing.Point(12, 12);
             this.textBox_dadosPaciente.Multiline = true;
             this.textBox_dadosPaciente.Name = "textBox_dadosPaciente";
-            this.textBox_dadosPaciente.Size = new System.Drawing.Size(310, 91);
+            this.textBox_dadosPaciente.Size = new System.Drawing.Size(301, 91);
             this.textBox_dadosPaciente.TabIndex = 1;
             // 
             // comboBox_especializacao
