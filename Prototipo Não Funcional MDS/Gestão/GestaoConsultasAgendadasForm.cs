@@ -17,6 +17,8 @@ namespace Prototipo_Não_Funcional_MDS
         {
             InitializeComponent();
             container = new ModeloContainer();
+            refreshlistaConsultasAgendadas();
+            
         }
         //ESTE EVENTO CHAMA O FORMULARIO "DETALHESCONSULTA" POREM RECEBE COMO PARAMETROS UMA CONSULTA SELECIONADA PARA QUE SEJAM CARREGADOS OS DADOS DESSA CONSULTA.
         //ESTE EVENTO ESTARA ASSOCIADO AO DOUBLE_CLICK NA LIST_BOX_CONSULTAS

@@ -85,7 +85,7 @@
             this.label3.Size = new System.Drawing.Size(357, 13);
             this.label3.TabIndex = 26;
             this.label3.Text = "A password do funcionario é gerada e enviada para o email do funcionário";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            
             // 
             // AdicionarFuncionarioForm
             // 
@@ -100,7 +100,7 @@
             this.Controls.Add(this.label1);
             this.Name = "AdicionarFuncionarioForm";
             this.Text = "AdicionarFuncionario";
-            this.Load += new System.EventHandler(this.AdicionarFuncionario_Load);
+           
             this.ResumeLayout(false);
             this.PerformLayout();
 

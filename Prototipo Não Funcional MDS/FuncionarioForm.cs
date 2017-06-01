@@ -17,10 +17,11 @@ namespace Prototipo_Não_Funcional_MDS
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void eventoGestãoConsultas(object sender, EventArgs e)
         {
             GestaoConsultasForm form = new GestaoConsultasForm();
             form.ShowDialog();
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -33,6 +34,11 @@ namespace Prototipo_Não_Funcional_MDS
         {
             GestaoDoutoresForm form = new GestaoDoutoresForm();
             form.ShowDialog();
+        }
+
+        private void eventoSair(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
