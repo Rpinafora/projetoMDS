@@ -124,6 +124,11 @@
             // numericUpDown_altura
             // 
             this.numericUpDown_altura.Location = new System.Drawing.Point(197, 123);
+            this.numericUpDown_altura.Maximum = new decimal(new int[] {
+            300,
+            0,
+            0,
+            0});
             this.numericUpDown_altura.Name = "numericUpDown_altura";
             this.numericUpDown_altura.Size = new System.Drawing.Size(75, 20);
             this.numericUpDown_altura.TabIndex = 37;
@@ -131,6 +136,11 @@
             // numericUpDown_peso
             // 
             this.numericUpDown_peso.Location = new System.Drawing.Point(51, 123);
+            this.numericUpDown_peso.Maximum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
             this.numericUpDown_peso.Name = "numericUpDown_peso";
             this.numericUpDown_peso.Size = new System.Drawing.Size(75, 20);
             this.numericUpDown_peso.TabIndex = 38;
