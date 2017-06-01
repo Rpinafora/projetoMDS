@@ -37,7 +37,7 @@
             this.comboBox_doutoresDisponiveis = new System.Windows.Forms.ComboBox();
             this.button_registar = new System.Windows.Forms.Button();
             this.label_sintomas = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox_sintomas = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // textBox_dadosPaciente
@@ -46,18 +46,13 @@
             this.textBox_dadosPaciente.Location = new System.Drawing.Point(12, 12);
             this.textBox_dadosPaciente.Multiline = true;
             this.textBox_dadosPaciente.Name = "textBox_dadosPaciente";
-            this.textBox_dadosPaciente.Size = new System.Drawing.Size(246, 91);
+            this.textBox_dadosPaciente.Size = new System.Drawing.Size(310, 91);
             this.textBox_dadosPaciente.TabIndex = 1;
             // 
             // comboBox_especializacao
             // 
             this.comboBox_especializacao.FormattingEnabled = true;
-            this.comboBox_especializacao.Items.AddRange(new object[] {
-            "Especialização 1",
-            "Especialização 2",
-            "Especialização 3",
-            "Especialização 4"});
-            this.comboBox_especializacao.Location = new System.Drawing.Point(137, 260);
+            this.comboBox_especializacao.Location = new System.Drawing.Point(192, 260);
             this.comboBox_especializacao.Name = "comboBox_especializacao";
             this.comboBox_especializacao.Size = new System.Drawing.Size(121, 21);
             this.comboBox_especializacao.TabIndex = 2;
@@ -68,7 +63,7 @@
             // 
             this.dateTimePicker_dataConsulta.Location = new System.Drawing.Point(58, 109);
             this.dateTimePicker_dataConsulta.Name = "dateTimePicker_dataConsulta";
-            this.dateTimePicker_dataConsulta.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker_dataConsulta.Size = new System.Drawing.Size(255, 20);
             this.dateTimePicker_dataConsulta.TabIndex = 3;
             // 
             // label1
@@ -101,14 +96,14 @@
             // comboBox_doutoresDisponiveis
             // 
             this.comboBox_doutoresDisponiveis.FormattingEnabled = true;
-            this.comboBox_doutoresDisponiveis.Location = new System.Drawing.Point(137, 287);
+            this.comboBox_doutoresDisponiveis.Location = new System.Drawing.Point(192, 287);
             this.comboBox_doutoresDisponiveis.Name = "comboBox_doutoresDisponiveis";
             this.comboBox_doutoresDisponiveis.Size = new System.Drawing.Size(121, 21);
             this.comboBox_doutoresDisponiveis.TabIndex = 7;
             // 
             // button_registar
             // 
-            this.button_registar.Location = new System.Drawing.Point(173, 314);
+            this.button_registar.Location = new System.Drawing.Point(228, 314);
             this.button_registar.Name = "button_registar";
             this.button_registar.Size = new System.Drawing.Size(85, 23);
             this.button_registar.TabIndex = 8;
@@ -124,22 +119,21 @@
             this.label_sintomas.Size = new System.Drawing.Size(50, 13);
             this.label_sintomas.TabIndex = 9;
             this.label_sintomas.Text = "Sintomas";
-            this.label_sintomas.Click += new System.EventHandler(this.label_sintomas_Click);
             // 
-            // textBox1
+            // textBox_sintomas
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 161);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(246, 90);
-            this.textBox1.TabIndex = 10;
+            this.textBox_sintomas.Location = new System.Drawing.Point(12, 161);
+            this.textBox_sintomas.Multiline = true;
+            this.textBox_sintomas.Name = "textBox_sintomas";
+            this.textBox_sintomas.Size = new System.Drawing.Size(301, 90);
+            this.textBox_sintomas.TabIndex = 10;
             // 
             // ConsultaRegistoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(270, 346);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(325, 346);
+            this.Controls.Add(this.textBox_sintomas);
             this.Controls.Add(this.label_sintomas);
             this.Controls.Add(this.button_registar);
             this.Controls.Add(this.comboBox_doutoresDisponiveis);
@@ -168,6 +162,6 @@
         private System.Windows.Forms.ComboBox comboBox_doutoresDisponiveis;
         private System.Windows.Forms.Button button_registar;
         private System.Windows.Forms.Label label_sintomas;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox_sintomas;
     }
 }

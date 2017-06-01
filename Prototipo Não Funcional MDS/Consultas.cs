@@ -20,6 +20,7 @@ namespace Prototipo_Não_Funcional_MDS
         public string diagonostico { get; set; }
         public int PacientesId { get; set; }
         public int DoutoresId { get; set; }
+        public System.DateTime data { get; set; }
     
         public virtual Pacientes Pacientes { get; set; }
         public virtual Doutores Doutores { get; set; }

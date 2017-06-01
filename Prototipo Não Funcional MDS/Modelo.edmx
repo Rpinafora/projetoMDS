@@ -62,6 +62,7 @@
     <Property Name="diagonostico" Type="nvarchar(max)" Nullable="false" />
     <Property Name="PacientesId" Type="int" Nullable="false" />
     <Property Name="DoutoresId" Type="int" Nullable="false" />
+    <Property Name="data" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="EspecializacoesSet">
     <Key>
@@ -246,6 +247,7 @@
           <Property Name="PacientesId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Doutores" Relationship="Modelo.DoutoresConsultas" FromRole="Consultas" ToRole="Doutores" />
           <Property Name="DoutoresId" Type="Int32" Nullable="false" />
+          <Property Name="data" Type="DateTime" Nullable="false" />
         </EntityType>
         <Association Name="ConsultasPacientes">
           <End Type="Modelo.Consultas" Role="Consultas" Multiplicity="*" />
@@ -345,6 +347,7 @@
           <ScalarProperty Name="diagonostico" ColumnName="diagonostico" />
           <ScalarProperty Name="PacientesId" ColumnName="PacientesId" />
           <ScalarProperty Name="DoutoresId" ColumnName="DoutoresId" />
+          <ScalarProperty Name="data" ColumnName="data" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

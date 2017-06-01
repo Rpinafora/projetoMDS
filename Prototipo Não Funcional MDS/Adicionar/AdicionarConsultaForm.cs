@@ -14,6 +14,7 @@ namespace Prototipo_Não_Funcional_MDS
     {
         private Pacientes pacienteSlecionado;
         private ModeloContainer container;
+        
         public AdicionarConsultaForm()
         {
             InitializeComponent();
@@ -30,8 +31,8 @@ namespace Prototipo_Não_Funcional_MDS
                 DialogResult resultado = form.ShowDialog();
                 if (form.DialogResult == DialogResult.OK)
                 {
-                    RefreshListaPacientes();
-                    container.SaveChanges();
+                    container.ConsultasSet.Add(form.novaConsulta);                    
+                    container.SaveChanges();                                  
                 }
             }
             else

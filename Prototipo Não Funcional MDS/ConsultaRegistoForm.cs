@@ -14,6 +14,8 @@ namespace Prototipo_Não_Funcional_MDS
     {
         public Pacientes paciente;
         private ModeloContainer container;
+        public Consultas novaConsulta;
+        private Doutores doutor;
 
         public ConsultaRegistoForm()
         {
@@ -29,12 +31,16 @@ namespace Prototipo_Não_Funcional_MDS
 
         private void button_registar_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label_sintomas_Click(object sender, EventArgs e)
-        {
-
+            doutor = (Doutores)comboBox_doutoresDisponiveis.SelectedItem;
+            novaConsulta = new Consultas
+            {               
+                sintomas = textBox_sintomas.Text,
+                diagonostico = "A preencher pelo doutor",
+                data = dateTimePicker_dataConsulta.Value,
+                DoutoresId = doutor.Id,
+                PacientesId = paciente.Id               
+            };
+            DialogResult = DialogResult.OK;
         }
 
         private void comboBox_especializacao_SelectedIndexChanged(object sender, EventArgs e)
