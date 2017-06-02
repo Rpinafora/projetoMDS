@@ -38,6 +38,8 @@
             this.button_registar = new System.Windows.Forms.Button();
             this.label_sintomas = new System.Windows.Forms.Label();
             this.textBox_sintomas = new System.Windows.Forms.TextBox();
+            this.dateTimePicker_hora = new System.Windows.Forms.DateTimePicker();
+            this.label_hora = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBox_dadosPaciente
@@ -52,18 +54,18 @@
             // comboBox_especializacao
             // 
             this.comboBox_especializacao.FormattingEnabled = true;
-            this.comboBox_especializacao.Location = new System.Drawing.Point(192, 260);
+            this.comboBox_especializacao.Location = new System.Drawing.Point(192, 253);
             this.comboBox_especializacao.Name = "comboBox_especializacao";
             this.comboBox_especializacao.Size = new System.Drawing.Size(121, 21);
             this.comboBox_especializacao.TabIndex = 2;
-            this.comboBox_especializacao.Text = "Especialização 1";
             this.comboBox_especializacao.SelectedIndexChanged += new System.EventHandler(this.comboBox_especializacao_SelectedIndexChanged);
             // 
             // dateTimePicker_dataConsulta
             // 
-            this.dateTimePicker_dataConsulta.Location = new System.Drawing.Point(58, 109);
+            this.dateTimePicker_dataConsulta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker_dataConsulta.Location = new System.Drawing.Point(48, 109);
             this.dateTimePicker_dataConsulta.Name = "dateTimePicker_dataConsulta";
-            this.dateTimePicker_dataConsulta.Size = new System.Drawing.Size(255, 20);
+            this.dateTimePicker_dataConsulta.Size = new System.Drawing.Size(91, 20);
             this.dateTimePicker_dataConsulta.TabIndex = 3;
             // 
             // label1
@@ -78,7 +80,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 263);
+            this.label2.Location = new System.Drawing.Point(12, 256);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(81, 13);
             this.label2.TabIndex = 5;
@@ -87,7 +89,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 290);
+            this.label3.Location = new System.Drawing.Point(9, 283);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 13);
             this.label3.TabIndex = 6;
@@ -96,14 +98,14 @@
             // comboBox_doutoresDisponiveis
             // 
             this.comboBox_doutoresDisponiveis.FormattingEnabled = true;
-            this.comboBox_doutoresDisponiveis.Location = new System.Drawing.Point(192, 287);
+            this.comboBox_doutoresDisponiveis.Location = new System.Drawing.Point(192, 280);
             this.comboBox_doutoresDisponiveis.Name = "comboBox_doutoresDisponiveis";
             this.comboBox_doutoresDisponiveis.Size = new System.Drawing.Size(121, 21);
             this.comboBox_doutoresDisponiveis.TabIndex = 7;
             // 
             // button_registar
             // 
-            this.button_registar.Location = new System.Drawing.Point(228, 314);
+            this.button_registar.Location = new System.Drawing.Point(228, 307);
             this.button_registar.Name = "button_registar";
             this.button_registar.Size = new System.Drawing.Size(85, 23);
             this.button_registar.TabIndex = 8;
@@ -114,7 +116,7 @@
             // label_sintomas
             // 
             this.label_sintomas.AutoSize = true;
-            this.label_sintomas.Location = new System.Drawing.Point(9, 145);
+            this.label_sintomas.Location = new System.Drawing.Point(9, 138);
             this.label_sintomas.Name = "label_sintomas";
             this.label_sintomas.Size = new System.Drawing.Size(50, 13);
             this.label_sintomas.TabIndex = 9;
@@ -122,17 +124,38 @@
             // 
             // textBox_sintomas
             // 
-            this.textBox_sintomas.Location = new System.Drawing.Point(12, 161);
+            this.textBox_sintomas.Location = new System.Drawing.Point(12, 154);
             this.textBox_sintomas.Multiline = true;
             this.textBox_sintomas.Name = "textBox_sintomas";
             this.textBox_sintomas.Size = new System.Drawing.Size(301, 90);
             this.textBox_sintomas.TabIndex = 10;
             // 
+            // dateTimePicker_hora
+            // 
+            this.dateTimePicker_hora.AllowDrop = true;
+            this.dateTimePicker_hora.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePicker_hora.Location = new System.Drawing.Point(222, 109);
+            this.dateTimePicker_hora.Name = "dateTimePicker_hora";
+            this.dateTimePicker_hora.ShowUpDown = true;
+            this.dateTimePicker_hora.Size = new System.Drawing.Size(91, 20);
+            this.dateTimePicker_hora.TabIndex = 11;
+            // 
+            // label_hora
+            // 
+            this.label_hora.AutoSize = true;
+            this.label_hora.Location = new System.Drawing.Point(180, 115);
+            this.label_hora.Name = "label_hora";
+            this.label_hora.Size = new System.Drawing.Size(33, 13);
+            this.label_hora.TabIndex = 12;
+            this.label_hora.Text = "Hora:";
+            // 
             // ConsultaRegistoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(325, 346);
+            this.ClientSize = new System.Drawing.Size(325, 344);
+            this.Controls.Add(this.label_hora);
+            this.Controls.Add(this.dateTimePicker_hora);
             this.Controls.Add(this.textBox_sintomas);
             this.Controls.Add(this.label_sintomas);
             this.Controls.Add(this.button_registar);
@@ -163,5 +186,7 @@
         private System.Windows.Forms.Button button_registar;
         private System.Windows.Forms.Label label_sintomas;
         private System.Windows.Forms.TextBox textBox_sintomas;
+        private System.Windows.Forms.DateTimePicker dateTimePicker_hora;
+        private System.Windows.Forms.Label label_hora;
     }
 }

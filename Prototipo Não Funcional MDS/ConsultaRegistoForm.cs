@@ -31,16 +31,26 @@ namespace Prototipo_Não_Funcional_MDS
 
         private void button_registar_Click(object sender, EventArgs e)
         {
-            doutor = (Doutores)comboBox_doutoresDisponiveis.SelectedItem;
-            novaConsulta = new Consultas
-            {               
-                sintomas = textBox_sintomas.Text,
-                diagonostico = "A preencher pelo doutor",
-                data = dateTimePicker_dataConsulta.Value,
-                DoutoresId = doutor.Id,
-                PacientesId = paciente.Id               
-            };
-            DialogResult = DialogResult.OK;
+            if (textBox_sintomas.Text.Length != 0 && comboBox_doutoresDisponiveis.SelectedItem != null && comboBox_especializacao.SelectedItem != null)
+            {
+                doutor = (Doutores)comboBox_doutoresDisponiveis.SelectedItem;
+                novaConsulta = new Consultas
+                {
+                    sintomas = textBox_sintomas.Text,
+                    diagonostico = "A preencher pelo doutor",
+                    data = dateTimePicker_dataConsulta.Value,
+                    DoutoresId = doutor.Id,
+                    PacientesId = paciente.Id,
+                    hora = dateTimePicker_hora.Value.TimeOfDay
+
+                };
+                DialogResult = DialogResult.OK;
+            }
+            else
+            {
+                MessageBox.Show("Dados inválidos");
+            }
+            
         }
 
         private void comboBox_especializacao_SelectedIndexChanged(object sender, EventArgs e)
