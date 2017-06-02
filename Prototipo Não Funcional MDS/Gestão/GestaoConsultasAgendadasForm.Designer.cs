@@ -36,7 +36,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(185, 41);
+            this.button3.Location = new System.Drawing.Point(340, 41);
             this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(220, 28);
@@ -59,16 +59,16 @@
             // 
             this.lbx_consultas.FormattingEnabled = true;
             this.lbx_consultas.ItemHeight = 16;
-            this.lbx_consultas.Location = new System.Drawing.Point(17, 41);
+            this.lbx_consultas.Location = new System.Drawing.Point(20, 41);
             this.lbx_consultas.Margin = new System.Windows.Forms.Padding(4);
             this.lbx_consultas.Name = "lbx_consultas";
-            this.lbx_consultas.Size = new System.Drawing.Size(159, 260);
+            this.lbx_consultas.Size = new System.Drawing.Size(312, 260);
             this.lbx_consultas.TabIndex = 5;
             this.lbx_consultas.SelectedIndexChanged += new System.EventHandler(this.EventoMostrarDadosConsulta);
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(185, 273);
+            this.button4.Location = new System.Drawing.Point(340, 273);
             this.button4.Margin = new System.Windows.Forms.Padding(4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(220, 28);
@@ -81,7 +81,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(432, 321);
+            this.ClientSize = new System.Drawing.Size(573, 321);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label1);

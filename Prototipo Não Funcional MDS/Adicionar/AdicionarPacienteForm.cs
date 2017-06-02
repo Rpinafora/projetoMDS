@@ -23,9 +23,12 @@ namespace Prototipo_Não_Funcional_MDS
         {
 
             int numero;
+            int numeroNIF;
             bool result = Int32.TryParse(textBox_numTelefone.Text, out numero);
+            bool resulNIF = Int32.TryParse(textBox_nif.Text, out numeroNIF);
+           
 
-            if (result)
+            if (result && resulNIF)
             {
                 novoPaciente = new Pacientes
                 {
@@ -39,9 +42,13 @@ namespace Prototipo_Não_Funcional_MDS
                 };
                 DialogResult = DialogResult.OK;
             }
-            else
+            else if(!result)
             {
                 MessageBox.Show("Numero de telefone inválido");
+            }
+            else
+            {
+                MessageBox.Show("Numero de NIF inválido");
             }
             
         }

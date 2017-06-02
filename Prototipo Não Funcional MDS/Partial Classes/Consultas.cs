@@ -10,7 +10,7 @@ namespace Prototipo_Não_Funcional_MDS
     {
         public override string ToString()
         {
-            return Pacientes.nome + " - " + data.ToString("dd/MM / yyyy") + " " + hora;
+            return Pacientes.nome + " - " + data.ToString("dd/MM / yyyy") + " " + hora.ToString("HH:mm");
         }
     }
 }

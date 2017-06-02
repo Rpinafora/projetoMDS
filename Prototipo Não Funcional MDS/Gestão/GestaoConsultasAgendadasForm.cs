@@ -25,7 +25,12 @@ namespace Prototipo_Não_Funcional_MDS
         private void EventoMostrarDadosConsulta(object sender, EventArgs e)
         {
             DetalhesConsultaForm form = new DetalhesConsultaForm((Consultas)lbx_consultas.SelectedItem);
-            form.ShowDialog();
+            DialogResult resultado = form.ShowDialog();
+
+            if (resultado == DialogResult.OK)
+            {
+                container.SaveChanges();
+            }
         }
 
         //ESTE EVENTO PROCURA NA BASE DE DADOS A CONSULTA QUE TEM O MESMO ID QUE A CONSULTA SELECIONADA E ELEMINA-A

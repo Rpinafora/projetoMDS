@@ -28,14 +28,14 @@ namespace Prototipo_Não_Funcional_MDS
 
         private void button_editarConsulta_Click(object sender, EventArgs e)
         {
-            EditarConsultaForm form = new EditarConsultaForm();
+           /*
             form.consulta = consultaSelecionada;
             DialogResult resultado = form.ShowDialog();
             if (form.DialogResult == DialogResult.OK)
             {
                 container.SaveChanges();
                 refreshListaConsultas();
-            }
+            }*/
         }
 
         private void button_registarConsulta_Click(object sender, EventArgs e)
