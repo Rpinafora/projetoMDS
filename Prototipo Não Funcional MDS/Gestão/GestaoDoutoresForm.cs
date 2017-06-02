@@ -94,7 +94,7 @@ namespace Prototipo_Não_Funcional_MDS
             lbx_doutores.Items.Clear();
             if (txt_procurar.TextLength > 0)
             {
-                foreach (Doutores doutor in container.PessoasSet)
+                foreach (Doutores doutor in container.PessoasSet.OfType<Doutores>())
                 {
 
                     if (doutor.nome.Contains(txt_procurar.Text))
