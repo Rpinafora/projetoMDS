@@ -27,7 +27,7 @@ namespace Prototipo_Não_Funcional_MDS
             bool result = Int32.TryParse(textBox_numTelefone.Text, out numero);
             bool resultNIF = Int32.TryParse(textBox_nif.Text, out numeroNIF);
 
-            if (textBox_nome.Text != null && textBox_numTelefone.Text != null && textBox_nif.Text != null && numericUpDown_altura.Value == 0 && numericUpDown_peso.Value == 0 && comboBox_tipoSanguineo.SelectedIndex != -1)
+            if (textBox_nome.Text != null && textBox_numTelefone.Text != null && textBox_nif.Text!= null && numericUpDown_altura.Value > 0 && numericUpDown_peso.Value > 0 && comboBox_tipoSanguineo.SelectedIndex != -1)
             {
                 if (result && resultNIF)
                 {
@@ -51,6 +51,10 @@ namespace Prototipo_Não_Funcional_MDS
                 {
                     MessageBox.Show("NIF inválido");
                 }
+            }
+            else
+            {
+                MessageBox.Show("Dados Inválidos");
             }
             
             
