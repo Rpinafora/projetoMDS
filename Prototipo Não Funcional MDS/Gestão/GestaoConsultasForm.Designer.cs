@@ -81,6 +81,7 @@
             this.button_eliminarConsulta.TabIndex = 4;
             this.button_eliminarConsulta.Text = "Eliminar Consulta Selecionada";
             this.button_eliminarConsulta.UseVisualStyleBackColor = true;
+            this.button_eliminarConsulta.Click += new System.EventHandler(this.button_eliminarConsulta_Click);
             // 
             // GestaoConsultasForm
             // 

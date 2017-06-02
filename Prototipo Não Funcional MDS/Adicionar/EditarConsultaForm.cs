@@ -12,6 +12,8 @@ namespace Prototipo_Não_Funcional_MDS
 {
     public partial class EditarConsultaForm : Form
     {
+        private Doutores doutor;
+        private Especializacoes especializacao;
         public Consultas consulta;
         private ModeloContainer container;
         public EditarConsultaForm()
@@ -22,6 +24,7 @@ namespace Prototipo_Não_Funcional_MDS
 
         private void EditarConsultaForm_Load(object sender, EventArgs e)
         {
+            textBox_dadosPaciente.Text = "Nome: " + consulta.Pacientes.nome + "\r\n" + "Idade: " + (DateTime.Now.Year - consulta.Pacientes.dataNascimento.Year) + "\r\n" + "Altura: " + consulta.Pacientes.altura + "\r\n" + "Peso: " + consulta.Pacientes.peso + "\r\n" + "Tipo Sanguineo: " + consulta.Pacientes.tipoSanguineo;
             comboBox_especializacao.Items.AddRange(container.EspecializacoesSet.ToArray());
             dateTimePicker_dataConsulta.Value = consulta.data;
             dateTimePicker_hora.Value = consulta.hora;
@@ -36,12 +39,23 @@ namespace Prototipo_Não_Funcional_MDS
 
         private void button_editar_Click(object sender, EventArgs e)
         {
+            if (textBox_sintomas.Text.Length != 0 && comboBox_doutoresDisponiveis.SelectedItem != null && comboBox_especializacao.SelectedItem != null)
+            {
+                doutor = (Doutores)comboBox_doutoresDisponiveis.SelectedItem;
+                especializacao = (Especializacoes)comboBox_especializacao.SelectedItem;
 
-        }
+                consulta.data = dateTimePicker_dataConsulta.Value;
+                consulta.hora = dateTimePicker_hora.Value;
+                consulta.sintomas = textBox_sintomas.Text;
+                consulta.EspecializacoesId = especializacao.Id;               
+                consulta.DoutoresId = doutor.Id;
 
-        private void comboBox_doutoresDisponiveis_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            refreshDoutores();
+                DialogResult = DialogResult.OK;
+            }
+            else
+            {
+                MessageBox.Show("Dados inválidos");
+            }
         }
 
         private void refreshDoutores()
@@ -54,6 +68,12 @@ namespace Prototipo_Não_Funcional_MDS
                     comboBox_doutoresDisponiveis.Items.Add(doutor);
                 }
             }
+        }
+
+        private void comboBox_especializacao_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            comboBox_doutoresDisponiveis.Text = "";
+            refreshDoutores();
         }
     }
 }

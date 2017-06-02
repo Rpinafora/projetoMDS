@@ -34,14 +34,22 @@ namespace Prototipo_Não_Funcional_MDS
 
         private void button_editarConsulta_Click(object sender, EventArgs e)
         {
-            EditarConsultaForm form = new EditarConsultaForm();
-            form.consulta = consultaSelecionada;
-            DialogResult resultado = form.ShowDialog();
-            if (form.DialogResult == DialogResult.OK)
+            if (consultaSelecionada != null)
             {
-                container.SaveChanges();
-                refreshListaConsultas();
+                EditarConsultaForm form = new EditarConsultaForm();
+                form.consulta = consultaSelecionada;
+                DialogResult resultado = form.ShowDialog();
+                if (form.DialogResult == DialogResult.OK)
+                {
+                    container.SaveChanges();
+                    refreshListaConsultas();
+                }
             }
+            else
+            {
+                MessageBox.Show("Selecione a consulta a editar");
+            }
+
         }
 
         private void button_registarConsulta_Click(object sender, EventArgs e)
@@ -53,7 +61,25 @@ namespace Prototipo_Não_Funcional_MDS
 
         private void listBox_consultas_SelectedIndexChanged(object sender, EventArgs e)
         {
+            consultaSelecionada = null;
             consultaSelecionada = (Consultas)listBox_consultas.SelectedItem;
+        }
+
+        private void button_eliminarConsulta_Click(object sender, EventArgs e)
+        {
+            if (consultaSelecionada != null)
+            {
+
+                DialogResult dialogResult = MessageBox.Show("Tem acerteza que pretende eliminar?", "Eliminar", MessageBoxButtons.YesNo);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    container.ConsultasSet.Remove(consultaSelecionada);
+                    container.SaveChanges();
+                    refreshListaConsultas();
+                }
+
+            }
         }
     }
 }

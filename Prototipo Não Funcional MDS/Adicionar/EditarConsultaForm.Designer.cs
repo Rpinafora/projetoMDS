@@ -95,7 +95,6 @@
             this.comboBox_doutoresDisponiveis.Name = "comboBox_doutoresDisponiveis";
             this.comboBox_doutoresDisponiveis.Size = new System.Drawing.Size(121, 21);
             this.comboBox_doutoresDisponiveis.TabIndex = 19;
-            this.comboBox_doutoresDisponiveis.SelectedIndexChanged += new System.EventHandler(this.comboBox_doutoresDisponiveis_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -109,7 +108,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 257);
+            this.label2.Location = new System.Drawing.Point(10, 257);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(81, 13);
             this.label2.TabIndex = 17;
@@ -139,6 +138,7 @@
             this.comboBox_especializacao.Name = "comboBox_especializacao";
             this.comboBox_especializacao.Size = new System.Drawing.Size(121, 21);
             this.comboBox_especializacao.TabIndex = 14;
+            this.comboBox_especializacao.SelectedIndexChanged += new System.EventHandler(this.comboBox_especializacao_SelectedIndexChanged);
             // 
             // textBox_dadosPaciente
             // 

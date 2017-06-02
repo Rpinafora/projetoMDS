@@ -58,6 +58,7 @@ namespace Prototipo_Não_Funcional_MDS
 
         private void comboBox_especializacao_SelectedIndexChanged(object sender, EventArgs e)
         {
+            comboBox_doutoresDisponiveis.Text = "";
             refreshDoutores();
         }
 
