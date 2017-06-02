@@ -36,6 +36,7 @@ namespace Prototipo_Não_Funcional_MDS
                 DialogResult confirmar = MessageBox.Show("Eliminar o doutor '" + doutorSelecionado.nome + "'?", "Eliminar Doutor", MessageBoxButtons.YesNo);
                 if (confirmar == DialogResult.Yes)
                 {
+                    doutorSelecionado.Especializacoes.Clear();
                     container.PessoasSet.Remove(doutorSelecionado);
                     container.SaveChanges();
                     RefreshListaDoutores();
@@ -97,7 +98,7 @@ namespace Prototipo_Não_Funcional_MDS
                 foreach (Doutores doutor in container.PessoasSet.OfType<Doutores>())
                 {
 
-                    if (doutor.nome.Contains(txt_procurar.Text))
+                    if (doutor.nome.ToLower().Contains(txt_procurar.Text.ToLower()))
                         lbx_doutores.Items.Add(doutor);
                 }
             }

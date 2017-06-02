@@ -92,7 +92,7 @@ namespace Prototipo_Não_Funcional_MDS
                 foreach (Especializacoes esp in container.EspecializacoesSet)
                 {
 
-                    if (esp.nome.Contains(txt_procurar.Text))
+                    if (esp.nome.ToLower().Contains(txt_procurar.Text.ToLower()))
                         lbx_especializacoes.Items.Add(esp);
                 }
             }
