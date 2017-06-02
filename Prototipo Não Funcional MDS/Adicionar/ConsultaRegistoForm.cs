@@ -41,7 +41,7 @@ namespace Prototipo_Não_Funcional_MDS
                     data = dateTimePicker_dataConsulta.Value,
                     DoutoresId = doutor.Id,
                     PacientesId = paciente.Id,
-                    hora = dateTimePicker_hora.Value.TimeOfDay
+                    hora = dateTimePicker_hora.Value
 
                 };
                 DialogResult = DialogResult.OK;
@@ -49,8 +49,7 @@ namespace Prototipo_Não_Funcional_MDS
             else
             {
                 MessageBox.Show("Dados inválidos");
-            }
-            
+            }            
         }
 
         private void comboBox_especializacao_SelectedIndexChanged(object sender, EventArgs e)

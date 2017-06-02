@@ -13,34 +13,41 @@ namespace Prototipo_Não_Funcional_MDS
     public partial class GestaoConsultasForm : Form
     {
         private ModeloContainer container = new ModeloContainer();
+        private Consultas consultaSelecionada;
         public GestaoConsultasForm()
         {
             InitializeComponent();
             refreshListaConsultas();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        public void refreshListaConsultas()
         {
-            MessageBox.Show("Tem acerteza que pretende eliminar?");
+            listBox_consultas.Items.Clear();
+            listBox_consultas.Items.AddRange(container.ConsultasSet.ToArray());
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button_editarConsulta_Click(object sender, EventArgs e)
+        {
+            EditarConsultaForm form = new EditarConsultaForm();
+            form.consulta = consultaSelecionada;
+            DialogResult resultado = form.ShowDialog();
+            if (form.DialogResult == DialogResult.OK)
+            {
+                container.SaveChanges();
+                refreshListaConsultas();
+            }
+        }
+
+        private void button_registarConsulta_Click(object sender, EventArgs e)
         {
             AdicionarConsultaForm form = new AdicionarConsultaForm();
             form.ShowDialog();
             refreshListaConsultas();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void listBox_consultas_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ConsultaRegistoForm form = new ConsultaRegistoForm();
-            form.ShowDialog();
-        }
-
-        public void refreshListaConsultas()
-        {
-            listBox_consultas.Items.Clear();
-            listBox_consultas.Items.AddRange(container.ConsultasSet.ToArray());
+            consultaSelecionada = (Consultas)listBox_consultas.SelectedItem;
         }
     }
 }

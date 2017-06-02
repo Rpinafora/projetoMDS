@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 06/02/2017 09:51:15
+-- Date Created: 06/02/2017 10:51:53
 -- Generated from EDMX file: C:\Users\2160433\Documents\GitHub\projetoMDS\Prototipo Não Funcional MDS\Modelo.edmx
 -- --------------------------------------------------
 
@@ -88,7 +88,7 @@ CREATE TABLE [dbo].[ConsultasSet] (
     [PacientesId] int  NOT NULL,
     [DoutoresId] int  NOT NULL,
     [data] datetime  NOT NULL,
-    [hora] time  NOT NULL
+    [hora] datetime  NOT NULL
 );
 GO
 

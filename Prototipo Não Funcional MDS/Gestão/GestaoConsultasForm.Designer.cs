@@ -30,9 +30,9 @@
         {
             this.listBox_consultas = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.button_registarConsulta = new System.Windows.Forms.Button();
+            this.button_editarConsulta = new System.Windows.Forms.Button();
+            this.button_eliminarConsulta = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBox_consultas
@@ -42,6 +42,7 @@
             this.listBox_consultas.Name = "listBox_consultas";
             this.listBox_consultas.Size = new System.Drawing.Size(222, 212);
             this.listBox_consultas.TabIndex = 0;
+            this.listBox_consultas.SelectedIndexChanged += new System.EventHandler(this.listBox_consultas_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -52,44 +53,43 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Consultas:";
             // 
-            // button1
+            // button_registarConsulta
             // 
-            this.button1.Location = new System.Drawing.Point(240, 29);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(165, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Registar Nova Consulta";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button_registarConsulta.Location = new System.Drawing.Point(240, 29);
+            this.button_registarConsulta.Name = "button_registarConsulta";
+            this.button_registarConsulta.Size = new System.Drawing.Size(165, 23);
+            this.button_registarConsulta.TabIndex = 2;
+            this.button_registarConsulta.Text = "Registar Nova Consulta";
+            this.button_registarConsulta.UseVisualStyleBackColor = true;
+            this.button_registarConsulta.Click += new System.EventHandler(this.button_registarConsulta_Click);
             // 
-            // button2
+            // button_editarConsulta
             // 
-            this.button2.Location = new System.Drawing.Point(240, 58);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(165, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Editar Consulta Selecionada";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button_editarConsulta.Location = new System.Drawing.Point(240, 58);
+            this.button_editarConsulta.Name = "button_editarConsulta";
+            this.button_editarConsulta.Size = new System.Drawing.Size(165, 23);
+            this.button_editarConsulta.TabIndex = 3;
+            this.button_editarConsulta.Text = "Editar Consulta Selecionada";
+            this.button_editarConsulta.UseVisualStyleBackColor = true;
+            this.button_editarConsulta.Click += new System.EventHandler(this.button_editarConsulta_Click);
             // 
-            // button3
+            // button_eliminarConsulta
             // 
-            this.button3.Location = new System.Drawing.Point(240, 87);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(165, 23);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Eliminar Consulta Selecionada";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button_eliminarConsulta.Location = new System.Drawing.Point(240, 87);
+            this.button_eliminarConsulta.Name = "button_eliminarConsulta";
+            this.button_eliminarConsulta.Size = new System.Drawing.Size(165, 23);
+            this.button_eliminarConsulta.TabIndex = 4;
+            this.button_eliminarConsulta.Text = "Eliminar Consulta Selecionada";
+            this.button_eliminarConsulta.UseVisualStyleBackColor = true;
             // 
             // GestaoConsultasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(417, 261);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button_eliminarConsulta);
+            this.Controls.Add(this.button_editarConsulta);
+            this.Controls.Add(this.button_registarConsulta);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBox_consultas);
             this.Name = "GestaoConsultasForm";
@@ -103,8 +103,8 @@
 
         private System.Windows.Forms.ListBox listBox_consultas;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button_registarConsulta;
+        private System.Windows.Forms.Button button_editarConsulta;
+        private System.Windows.Forms.Button button_eliminarConsulta;
     }
 }

@@ -63,7 +63,7 @@
     <Property Name="PacientesId" Type="int" Nullable="false" />
     <Property Name="DoutoresId" Type="int" Nullable="false" />
     <Property Name="data" Type="datetime" Nullable="false" />
-    <Property Name="hora" Type="time" Nullable="false" />
+    <Property Name="hora" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="EspecializacoesSet">
     <Key>
@@ -249,7 +249,7 @@
           <NavigationProperty Name="Doutores" Relationship="Modelo.DoutoresConsultas" FromRole="Consultas" ToRole="Doutores" />
           <Property Name="DoutoresId" Type="Int32" Nullable="false" />
           <Property Name="data" Type="DateTime" Nullable="false" />
-          <Property Name="hora" Type="Time" Nullable="false" />
+          <Property Name="hora" Type="DateTime" Nullable="false" />
         </EntityType>
         <Association Name="ConsultasPacientes">
           <End Type="Modelo.Consultas" Role="Consultas" Multiplicity="*" />
