@@ -214,6 +214,7 @@
     <Compile Include="Partial Classes\Doutores.cs" />
     <Compile Include="Partial Classes\Especializacoes.cs" />
     <Compile Include="Partial Classes\Pacientes.cs" />
+    <Compile Include="Partial Classes\Utilizadores.cs" />
     <Compile Include="Pessoas.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>

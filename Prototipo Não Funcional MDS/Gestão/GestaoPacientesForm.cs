@@ -54,6 +54,7 @@ namespace Prototipo_Não_Funcional_MDS
                 DialogResult dialogResult = MessageBox.Show("Tem acerteza que pretende eliminar?","Eliminar", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
+                    pacienteSelecionado.Consultas.Clear();
                     container.PessoasSet.Remove(pacienteSelecionado);
                     container.SaveChanges();
                     listBox_pacientes.ClearSelected();
