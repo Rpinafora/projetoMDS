@@ -31,7 +31,7 @@ namespace Prototipo_Não_Funcional_MDS
                 erro = true;
             if (!txt_email.Text.Contains("@"))
                 erro = true;
-            if (clbx_especializacoes.SelectedItems.Cast<Especializacoes>().Count() == 0)
+            if (clbx_especializacoes.CheckedItems.Cast<Especializacoes>().Count() == 0)
                 erro = true;
 
             if (!erro)
@@ -44,7 +44,7 @@ namespace Prototipo_Não_Funcional_MDS
                 doutor.numTelefone = numTelefone;
                 doutor.dataNascimento = dt_dataNasc.Value;
                 doutor.Especializacoes.Clear();
-                doutor.Especializacoes = clbx_especializacoes.SelectedItems.Cast<Especializacoes>().ToList();
+                doutor.Especializacoes = clbx_especializacoes.CheckedItems.Cast<Especializacoes>().ToList();
                 DialogResult = DialogResult.OK;
             }
             else
@@ -73,6 +73,11 @@ namespace Prototipo_Não_Funcional_MDS
             txt_email.Text = doutor.email;
             txt_telefone.Text = doutor.numTelefone.ToString();
             dt_dataNasc.Value = doutor.dataNascimento;           
+        }
+
+        private void clbx_especializacoes_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

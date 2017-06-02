@@ -95,6 +95,7 @@
             this.clbx_especializacoes.Name = "clbx_especializacoes";
             this.clbx_especializacoes.Size = new System.Drawing.Size(146, 154);
             this.clbx_especializacoes.TabIndex = 56;
+            this.clbx_especializacoes.SelectedIndexChanged += new System.EventHandler(this.clbx_especializacoes_SelectedIndexChanged);
             // 
             // btn_editar
             // 
