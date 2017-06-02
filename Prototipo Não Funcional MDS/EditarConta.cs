@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -26,12 +27,12 @@ namespace Prototipo_Não_Funcional_MDS
                 MessageBox.Show("Introduza um email válido");
             else
             {
-                if (txt_oldpass.Text == conta.password)
-                {  
+                if (sha512(txt_oldpass.Text) == conta.password)
+                {
                     if (txt_pass.TextLength > 0)
                     {
                         conta.email = txt_email.Text;
-                        conta.password = txt_pass.Text;
+                        conta.password = sha512(txt_pass.Text);
                         DialogResult = DialogResult.OK;
                     }
                     else
@@ -40,6 +41,16 @@ namespace Prototipo_Não_Funcional_MDS
                 }
                 else
                     MessageBox.Show("Introduziu a password errada");
+            }
+        }
+
+        private string sha512(string texto)
+        {
+            var pass = Encoding.UTF8.GetBytes(texto);
+            using (SHA512 shaM = new SHA512Managed())
+            {
+                var passEncr = shaM.ComputeHash(pass);
+                return Encoding.UTF8.GetString(passEncr);
             }
         }
     }

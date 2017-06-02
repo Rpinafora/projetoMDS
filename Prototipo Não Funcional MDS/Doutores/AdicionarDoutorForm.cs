@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -50,7 +51,7 @@ namespace Prototipo_Não_Funcional_MDS
                     funcao = "Doutor",
                     email = txt_email.Text,
                     numTelefone = numTelefone,
-                    password = "default",
+                    password = sha512("default"),
                     dataNascimento = dt_dataNasc.Value,
                     Especializacoes = clbx_especializacoes.CheckedItems.Cast<Especializacoes>().ToList()
                 };
@@ -68,6 +69,16 @@ namespace Prototipo_Não_Funcional_MDS
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private string sha512(string texto)
+        {
+            var pass = Encoding.UTF8.GetBytes(texto);
+            using (SHA512 shaM = new SHA512Managed())
+            {
+                var passEncr = shaM.ComputeHash(pass);
+                return Encoding.UTF8.GetString(passEncr);
+            }
         }
     }
 }

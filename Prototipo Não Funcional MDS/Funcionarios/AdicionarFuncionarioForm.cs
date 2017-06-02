@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -37,7 +38,7 @@ namespace Prototipo_Não_Funcional_MDS
 
                 novoUser.nome = nome;
                 novoUser.email = tbx_email.Text;
-                novoUser.password = "default";
+                novoUser.password = sha512("default");
                 novoUser.funcao = "Funcionario";
                 novoUser.dataNascimento = dateTimePicker_dataNascimento.Value;
                 novoUser.numTelefone = numero;
@@ -47,6 +48,16 @@ namespace Prototipo_Não_Funcional_MDS
             }
         }
 
-       
+
+        private string sha512(string texto)
+        {
+            var pass = Encoding.UTF8.GetBytes(texto);
+            using (SHA512 shaM = new SHA512Managed())
+            {
+                var passEncr = shaM.ComputeHash(pass);
+                return Encoding.UTF8.GetString(passEncr);
+            }
+        }
+
     }
 }

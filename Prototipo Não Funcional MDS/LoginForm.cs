@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -29,7 +30,8 @@ namespace Prototipo_Não_Funcional_MDS
             {
                 if (utilizador.funcao == "Doutor")
                 {
-                    if (utilizador.email == textBox1.Text && utilizador.password == textBox2.Text)
+                    
+                    if (utilizador.email == textBox1.Text && utilizador.password == sha512(textBox2.Text))
                     {
                         contaLogada = utilizador;
                         
@@ -38,7 +40,7 @@ namespace Prototipo_Não_Funcional_MDS
                 }
                 if (utilizador.funcao == "Funcionario")
                 {
-                    if (utilizador.email == textBox1.Text && utilizador.password == textBox2.Text)
+                    if (utilizador.email == textBox1.Text && utilizador.password == sha512(textBox2.Text))
                     {
                         contaLogada = utilizador;
                         login = true;
@@ -74,6 +76,16 @@ namespace Prototipo_Não_Funcional_MDS
                     form.ShowDialog();
                 }
             }
+        }
+
+        private string sha512(string texto)
+        {
+            var pass = Encoding.UTF8.GetBytes(texto);
+            using (SHA512 shaM = new SHA512Managed())
+            {
+                var passEncr = shaM.ComputeHash(pass);
+                return Encoding.UTF8.GetString(passEncr);
+            }        
         }
     }
 }
