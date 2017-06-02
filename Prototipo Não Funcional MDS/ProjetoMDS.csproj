@@ -57,56 +57,44 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Adicionar\AdicionarConsultaForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Adicionar\AdicionarConsultaForm.Designer.cs">
-      <DependentUpon>AdicionarConsultaForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Adicionar\AdicionarDoutorForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Adicionar\AdicionarDoutorForm.Designer.cs">
-      <DependentUpon>AdicionarDoutorForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Adicionar\AdicionarFuncionarioForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Adicionar\AdicionarFuncionarioForm.Designer.cs">
-      <DependentUpon>AdicionarFuncionarioForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Adicionar\AdicionarPacienteForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Adicionar\AdicionarPacienteForm.Designer.cs">
-      <DependentUpon>AdicionarPacienteForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Adicionar\ConsultaRegistoForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Adicionar\ConsultaRegistoForm.Designer.cs">
-      <DependentUpon>ConsultaRegistoForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Adicionar\EditarConsultaForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Adicionar\EditarConsultaForm.Designer.cs">
-      <DependentUpon>EditarConsultaForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Adicionar\EditarDoutorForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Adicionar\EditarDoutorForm.Designer.cs">
-      <DependentUpon>EditarDoutorForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AdminForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AdminForm.Designer.cs">
-      <DependentUpon>AdminForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Consultas.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultasAgendadas\Gestao ArquivoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultasAgendadas\Gestao ArquivoForm.Designer.cs">
+      <DependentUpon>Gestao ArquivoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultasAgendadas\GestaoConsultasAgendadasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsultasAgendadas\GestaoConsultasAgendadasForm.Designer.cs">
+      <DependentUpon>GestaoConsultasAgendadasForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\AdicionarConsultaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\AdicionarConsultaForm.Designer.cs">
+      <DependentUpon>AdicionarConsultaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\ConsultaRegistoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\ConsultaRegistoForm.Designer.cs">
+      <DependentUpon>ConsultaRegistoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\EditarConsultaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\EditarConsultaForm.Designer.cs">
+      <DependentUpon>EditarConsultaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\GestaoConsultasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\GestaoConsultasForm.Designer.cs">
+      <DependentUpon>GestaoConsultasForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DetalhesConsultaForm.cs">
       <SubType>Form</SubType>
@@ -117,11 +105,35 @@
     <Compile Include="Doutores.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
-    <Compile Include="Adicionar\EditarPacienteForm.cs">
+    <Compile Include="Doutores\AdicionarDoutorForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Adicionar\EditarPacienteForm.Designer.cs">
-      <DependentUpon>EditarPacienteForm.cs</DependentUpon>
+    <Compile Include="Doutores\AdicionarDoutorForm.Designer.cs">
+      <DependentUpon>AdicionarDoutorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doutores\EditarDoutorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doutores\EditarDoutorForm.Designer.cs">
+      <DependentUpon>EditarDoutorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Doutores\GestaoDoutoresForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doutores\GestaoDoutoresForm.Designer.cs">
+      <DependentUpon>GestaoDoutoresForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditarConta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditarConta.Designer.cs">
+      <DependentUpon>EditarConta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Funcionarios\EditarFuncionarioForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Funcionarios\EditarFuncionarioForm.Designer.cs">
+      <DependentUpon>EditarFuncionarioForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Especializacoes.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
@@ -150,41 +162,17 @@
     <Compile Include="FuncionarioForm.Designer.cs">
       <DependentUpon>FuncionarioForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Gestão\Gestao ArquivoForm.cs">
+    <Compile Include="Funcionarios\AdicionarFuncionarioForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Gestão\Gestao ArquivoForm.Designer.cs">
-      <DependentUpon>Gestao ArquivoForm.cs</DependentUpon>
+    <Compile Include="Funcionarios\AdicionarFuncionarioForm.Designer.cs">
+      <DependentUpon>AdicionarFuncionarioForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Gestão\GestaoConsultasAgendadasForm.cs">
+    <Compile Include="Funcionarios\GestaoFuncionariosForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Gestão\GestaoConsultasAgendadasForm.Designer.cs">
-      <DependentUpon>GestaoConsultasAgendadasForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Gestão\GestaoConsultasForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Gestão\GestaoConsultasForm.Designer.cs">
-      <DependentUpon>GestaoConsultasForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Gestão\GestaoDoutoresForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Gestão\GestaoDoutoresForm.Designer.cs">
-      <DependentUpon>GestaoDoutoresForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Gestão\GestaoFuncionariosForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Gestão\GestaoFuncionariosForm.Designer.cs">
+    <Compile Include="Funcionarios\GestaoFuncionariosForm.Designer.cs">
       <DependentUpon>GestaoFuncionariosForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Gestão\GestaoPacientesForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Gestão\GestaoPacientesForm.Designer.cs">
-      <DependentUpon>GestaoPacientesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -210,6 +198,24 @@
     <Compile Include="Pacientes.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
+    <Compile Include="Pacientes\AdicionarPacienteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pacientes\AdicionarPacienteForm.Designer.cs">
+      <DependentUpon>AdicionarPacienteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pacientes\EditarPacienteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pacientes\EditarPacienteForm.Designer.cs">
+      <DependentUpon>EditarPacienteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pacientes\GestaoPacientesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pacientes\GestaoPacientesForm.Designer.cs">
+      <DependentUpon>GestaoPacientesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Partial Classes\Consultas.cs" />
     <Compile Include="Partial Classes\Doutores.cs" />
     <Compile Include="Partial Classes\Especializacoes.cs" />
@@ -223,35 +229,38 @@
     <Compile Include="Utilizadores.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Adicionar\AdicionarConsultaForm.resx">
+    <EmbeddedResource Include="ConsultasAgendadas\Gestao ArquivoForm.resx">
+      <DependentUpon>Gestao ArquivoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsultasAgendadas\GestaoConsultasAgendadasForm.resx">
+      <DependentUpon>GestaoConsultasAgendadasForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\AdicionarConsultaForm.resx">
       <DependentUpon>AdicionarConsultaForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Adicionar\AdicionarDoutorForm.resx">
-      <DependentUpon>AdicionarDoutorForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Adicionar\AdicionarFuncionarioForm.resx">
-      <DependentUpon>AdicionarFuncionarioForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Adicionar\AdicionarPacienteForm.resx">
-      <DependentUpon>AdicionarPacienteForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Adicionar\ConsultaRegistoForm.resx">
+    <EmbeddedResource Include="Consultas\ConsultaRegistoForm.resx">
       <DependentUpon>ConsultaRegistoForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Adicionar\EditarConsultaForm.resx">
+    <EmbeddedResource Include="Consultas\EditarConsultaForm.resx">
       <DependentUpon>EditarConsultaForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Adicionar\EditarDoutorForm.resx">
-      <DependentUpon>EditarDoutorForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Adicionar\EditarPacienteForm.resx">
-      <DependentUpon>EditarPacienteForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AdminForm.resx">
-      <DependentUpon>AdminForm.cs</DependentUpon>
+    <EmbeddedResource Include="Consultas\GestaoConsultasForm.resx">
+      <DependentUpon>GestaoConsultasForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DetalhesConsultaForm.resx">
       <DependentUpon>DetalhesConsultaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doutores\AdicionarDoutorForm.resx">
+      <DependentUpon>AdicionarDoutorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doutores\EditarDoutorForm.resx">
+      <DependentUpon>EditarDoutorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doutores\GestaoDoutoresForm.resx">
+      <DependentUpon>GestaoDoutoresForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditarConta.resx">
+      <DependentUpon>EditarConta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Especializacoes\AdicionarEspecializacaoForm.resx">
       <DependentUpon>AdicionarEspecializacaoForm.cs</DependentUpon>
@@ -265,26 +274,26 @@
     <EmbeddedResource Include="FuncionarioForm.resx">
       <DependentUpon>FuncionarioForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Gestão\Gestao ArquivoForm.resx">
-      <DependentUpon>Gestao ArquivoForm.cs</DependentUpon>
+    <EmbeddedResource Include="Funcionarios\AdicionarFuncionarioForm.resx">
+      <DependentUpon>AdicionarFuncionarioForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Gestão\GestaoConsultasAgendadasForm.resx">
-      <DependentUpon>GestaoConsultasAgendadasForm.cs</DependentUpon>
+    <EmbeddedResource Include="Funcionarios\EditarFuncionarioForm.resx">
+      <DependentUpon>EditarFuncionarioForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Gestão\GestaoConsultasForm.resx">
-      <DependentUpon>GestaoConsultasForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Gestão\GestaoDoutoresForm.resx">
-      <DependentUpon>GestaoDoutoresForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Gestão\GestaoFuncionariosForm.resx">
+    <EmbeddedResource Include="Funcionarios\GestaoFuncionariosForm.resx">
       <DependentUpon>GestaoFuncionariosForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Gestão\GestaoPacientesForm.resx">
-      <DependentUpon>GestaoPacientesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pacientes\AdicionarPacienteForm.resx">
+      <DependentUpon>AdicionarPacienteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pacientes\EditarPacienteForm.resx">
+      <DependentUpon>EditarPacienteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pacientes\GestaoPacientesForm.resx">
+      <DependentUpon>GestaoPacientesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -332,12 +341,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ConsultasRegistadas\" />
-    <Folder Include="Consultas\" />
-    <Folder Include="Doutores\" />
-    <Folder Include="Funcionarios\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

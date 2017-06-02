@@ -12,7 +12,9 @@ namespace Prototipo_Não_Funcional_MDS
 {
     public partial class GestaoConsultasAgendadasForm : Form
     {
-        ModeloContainer container;
+        public ModeloContainer container;
+        public Utilizadores utilizador;
+
         public GestaoConsultasAgendadasForm()
         {
             InitializeComponent();
@@ -76,6 +78,15 @@ namespace Prototipo_Não_Funcional_MDS
                     lbx_consultas.Items.Add(consulta);
                 }
             }
+        }
+
+        private void btn_editar_Click(object sender, EventArgs e)
+        {
+            EditarConta form = new EditarConta();
+            form.conta = utilizador;
+            form.ShowDialog();
+            if (form.DialogResult == DialogResult.OK)
+                container.SaveChanges();
         }
     }
 }

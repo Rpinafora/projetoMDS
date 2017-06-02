@@ -23,6 +23,7 @@ namespace Prototipo_Não_Funcional_MDS
         private void button1_Click(object sender, EventArgs e)
         {
             bool login = false;
+            Utilizadores contaLogada = null;
 
             foreach (Utilizadores utilizador in container.PessoasSet.OfType<Utilizadores>())
             {
@@ -30,8 +31,8 @@ namespace Prototipo_Não_Funcional_MDS
                 {
                     if (utilizador.email == textBox1.Text && utilizador.password == textBox2.Text)
                     {
-                        GestaoConsultasAgendadasForm form = new GestaoConsultasAgendadasForm();
-                        form.ShowDialog();
+                        contaLogada = utilizador;
+                        
                         login = true;
                     }
                 }
@@ -39,12 +40,12 @@ namespace Prototipo_Não_Funcional_MDS
                 {
                     if (utilizador.email == textBox1.Text && utilizador.password == textBox2.Text)
                     {
-                        FuncionarioForm form = new FuncionarioForm();
-                        form.ShowDialog();
+                        contaLogada = utilizador;
                         login = true;
                     }
                 }
             }
+
             if (textBox1.Text == "master" && textBox2.Text == "master")
             {
                 GestaoFuncionariosForm form = new GestaoFuncionariosForm();
@@ -56,7 +57,23 @@ namespace Prototipo_Não_Funcional_MDS
             {
                 MessageBox.Show("Dados de acesso inválidos, por favor tente novamente");
             }
-
+            else
+            {
+                if (contaLogada.funcao == "Funcionario")
+                {
+                    FuncionarioForm form = new FuncionarioForm();
+                    form.container = container;
+                    form.utilizador = contaLogada;
+                    form.ShowDialog();
+                }
+                else if (contaLogada.funcao == "Doutor")
+                {
+                    GestaoConsultasAgendadasForm form = new GestaoConsultasAgendadasForm();
+                    form.container = container;
+                    form.utilizador = contaLogada;
+                    form.ShowDialog();
+                }
+            }
         }
     }
 }

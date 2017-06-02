@@ -44,10 +44,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(384, 218);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Location = new System.Drawing.Point(288, 177);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 28);
+            this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 25;
             this.button1.Text = "Registar ";
             this.button1.UseVisualStyleBackColor = true;
@@ -55,104 +54,103 @@
             // 
             // tbx_email
             // 
-            this.tbx_email.Location = new System.Drawing.Point(141, 80);
-            this.tbx_email.Margin = new System.Windows.Forms.Padding(4);
+            this.tbx_email.Location = new System.Drawing.Point(106, 65);
             this.tbx_email.Name = "tbx_email";
-            this.tbx_email.Size = new System.Drawing.Size(343, 22);
+            this.tbx_email.Size = new System.Drawing.Size(258, 20);
             this.tbx_email.TabIndex = 21;
             // 
             // tbx_nome
             // 
-            this.tbx_nome.Location = new System.Drawing.Point(141, 44);
-            this.tbx_nome.Margin = new System.Windows.Forms.Padding(4);
+            this.tbx_nome.Location = new System.Drawing.Point(106, 36);
             this.tbx_nome.Name = "tbx_nome";
-            this.tbx_nome.Size = new System.Drawing.Size(343, 22);
+            this.tbx_nome.Size = new System.Drawing.Size(258, 20);
             this.tbx_nome.TabIndex = 20;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 80);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(22, 65);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 17);
+            this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 14;
             this.label2.Text = "E-mail:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 44);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(22, 36);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 17);
+            this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 13;
             this.label1.Text = "Nome:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 11);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(12, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(478, 17);
+            this.label3.Size = new System.Drawing.Size(344, 13);
             this.label3.TabIndex = 26;
-            this.label3.Text = "A password do funcionario é gerada e enviada para o email do funcionário";
+            this.label3.Text = "Por favor notifique o funcionário para alterar a sua password de \'default\'";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 126);
+            this.label4.Location = new System.Drawing.Point(12, 102);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(120, 17);
+            this.label4.Size = new System.Drawing.Size(92, 13);
             this.label4.TabIndex = 27;
             this.label4.Text = "Data Nascimento:";
             // 
             // dateTimePicker_dataNascimento
             // 
-            this.dateTimePicker_dataNascimento.Location = new System.Drawing.Point(143, 126);
-            this.dateTimePicker_dataNascimento.Margin = new System.Windows.Forms.Padding(4);
+            this.dateTimePicker_dataNascimento.Location = new System.Drawing.Point(107, 102);
             this.dateTimePicker_dataNascimento.Name = "dateTimePicker_dataNascimento";
-            this.dateTimePicker_dataNascimento.Size = new System.Drawing.Size(212, 22);
+            this.dateTimePicker_dataNascimento.Size = new System.Drawing.Size(160, 20);
             this.dateTimePicker_dataNascimento.TabIndex = 36;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(0, 173);
+            this.label5.Location = new System.Drawing.Point(0, 141);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(137, 17);
+            this.label5.Size = new System.Drawing.Size(103, 13);
             this.label5.TabIndex = 37;
             this.label5.Text = "Numero de telefone:";
             // 
             // textBox_numTelefo
             // 
-            this.textBox_numTelefo.Location = new System.Drawing.Point(143, 173);
+            this.textBox_numTelefo.Location = new System.Drawing.Point(107, 141);
+            this.textBox_numTelefo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox_numTelefo.Name = "textBox_numTelefo";
-            this.textBox_numTelefo.Size = new System.Drawing.Size(132, 22);
+            this.textBox_numTelefo.Size = new System.Drawing.Size(100, 20);
             this.textBox_numTelefo.TabIndex = 38;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(281, 173);
+            this.label6.Location = new System.Drawing.Point(211, 141);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(33, 17);
+            this.label6.Size = new System.Drawing.Size(27, 13);
             this.label6.TabIndex = 39;
             this.label6.Text = "NIF:";
             // 
             // textBox_nif
             // 
-            this.textBox_nif.Location = new System.Drawing.Point(320, 170);
+            this.textBox_nif.Location = new System.Drawing.Point(240, 138);
+            this.textBox_nif.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox_nif.Name = "textBox_nif";
-            this.textBox_nif.Size = new System.Drawing.Size(132, 22);
+            this.textBox_nif.Size = new System.Drawing.Size(100, 20);
             this.textBox_nif.TabIndex = 40;
             // 
             // AdicionarFuncionarioForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(501, 259);
+            this.ClientSize = new System.Drawing.Size(376, 210);
             this.Controls.Add(this.textBox_nif);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBox_numTelefo);
@@ -165,7 +163,6 @@
             this.Controls.Add(this.tbx_nome);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AdicionarFuncionarioForm";
             this.Text = "AdicionarFuncionario";
             this.ResumeLayout(false);

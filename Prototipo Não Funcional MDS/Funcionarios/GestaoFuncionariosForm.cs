@@ -13,6 +13,7 @@ namespace Prototipo_Não_Funcional_MDS
     public partial class GestaoFuncionariosForm : Form
     {
         ModeloContainer container;
+        Utilizadores funcionarioSelecionado;
 
         public GestaoFuncionariosForm()
         {
@@ -35,8 +36,20 @@ namespace Prototipo_Não_Funcional_MDS
 
         private void button3_Click(object sender, EventArgs e)
         {
-            AdicionarFuncionarioForm form = new AdicionarFuncionarioForm();
-            form.ShowDialog();
+            if (funcionarioSelecionado != null)
+            {
+                EditarFuncionarioForm form = new EditarFuncionarioForm();
+                form.container = container;
+                form.funcionario = funcionarioSelecionado;
+                form.ShowDialog();
+                if (form.DialogResult == DialogResult.OK)
+                {
+                    container.SaveChanges();
+                    RefrashListaFuncionarios();
+                }
+            }
+            else
+                MessageBox.Show("Por favor selecione o doutor que pretende editar");
         }
 
         private void AdicionarUser(Utilizadores user)
@@ -58,32 +71,35 @@ namespace Prototipo_Não_Funcional_MDS
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Utilizadores utilizadorselecionado = (Utilizadores)listBox1.SelectedItem;
-            if (utilizadorselecionado == null)
+            if (funcionarioSelecionado != null)
             {
-                MessageBox.Show("Selecione um utilizador");
-
+                DialogResult confirmar = MessageBox.Show("Eliminar o funcionário '" + funcionarioSelecionado.nome + "'?", "Eliminar funcionário", MessageBoxButtons.YesNo);
+                if (confirmar == DialogResult.Yes)
+                {
+                    container.PessoasSet.Remove(funcionarioSelecionado);
+                    container.SaveChanges();
+                    RefrashListaFuncionarios();
+                    funcionarioSelecionado = null;
+                }
             }
             else
-            {
-                foreach (Utilizadores utilizador in container.PessoasSet.OfType<Utilizadores>())
-                {
-
-                    if (utilizadorselecionado.nome == utilizador.nome)
-                    {
-                        container.PessoasSet.Remove(utilizador);
-                    }
-
-                }
-                container.SaveChanges();
-                RefrashListaFuncionarios();
-
-            }
+                MessageBox.Show("Por favor selecione o funcionário que pretende eliminar");
         }
 
         private void btn_editar_Click(object sender, EventArgs e)
         {
+            EditarConta form = new EditarConta();
+            form.conta = funcionarioSelecionado;
+            if (form.DialogResult == DialogResult.Yes)
+            {
+                container.SaveChanges();
+                RefrashListaFuncionarios();
+            }
+        }
 
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            funcionarioSelecionado = (Utilizadores)listBox1.SelectedItem;
         }
     }
 }

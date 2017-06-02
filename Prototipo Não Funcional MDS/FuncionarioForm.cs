@@ -12,6 +12,9 @@ namespace Prototipo_Não_Funcional_MDS
 {
     public partial class FuncionarioForm : Form
     {
+        public Utilizadores utilizador;
+        public ModeloContainer container;
+
         public FuncionarioForm()
         {
             InitializeComponent();
@@ -21,7 +24,7 @@ namespace Prototipo_Não_Funcional_MDS
         {
             GestaoConsultasForm form = new GestaoConsultasForm();
             form.ShowDialog();
-            
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -39,6 +42,15 @@ namespace Prototipo_Não_Funcional_MDS
         private void eventoSair(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btn_editar_Click(object sender, EventArgs e)
+        {
+            EditarConta form = new EditarConta();
+            form.conta = utilizador;
+            form.ShowDialog();
+            if (form.DialogResult == DialogResult.OK)
+                container.SaveChanges();
         }
     }
 }

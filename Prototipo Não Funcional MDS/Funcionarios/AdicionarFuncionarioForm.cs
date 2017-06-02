@@ -37,7 +37,7 @@ namespace Prototipo_Não_Funcional_MDS
 
                 novoUser.nome = nome;
                 novoUser.email = tbx_email.Text;
-                novoUser.password = "Default";
+                novoUser.password = "default";
                 novoUser.funcao = "Funcionario";
                 novoUser.dataNascimento = dateTimePicker_dataNascimento.Value;
                 novoUser.numTelefone = numero;
