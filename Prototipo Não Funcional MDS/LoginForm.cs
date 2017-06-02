@@ -12,7 +12,6 @@ namespace Prototipo_Não_Funcional_MDS
 {
     public partial class LoginForm : Form
     {
-
         ModeloContainer container;
         public LoginForm()
         {
@@ -23,6 +22,8 @@ namespace Prototipo_Não_Funcional_MDS
 
         private void button1_Click(object sender, EventArgs e)
         {
+            bool login = false;
+
             foreach (Utilizadores utilizador in container.PessoasSet.OfType<Utilizadores>())
             {
                 if (utilizador.funcao == "Doutor")
@@ -31,6 +32,7 @@ namespace Prototipo_Não_Funcional_MDS
                     {
                         GestaoConsultasAgendadasForm form = new GestaoConsultasAgendadasForm();
                         form.ShowDialog();
+                        login = true;
                     }
                 }
                 if (utilizador.funcao == "Funcionario")
@@ -39,14 +41,20 @@ namespace Prototipo_Não_Funcional_MDS
                     {
                         FuncionarioForm form = new FuncionarioForm();
                         form.ShowDialog();
+                        login = true;
                     }
                 }
-                if (textBox1.Text == "Admin")
-                {
-                    AdminForm form = new AdminForm();
-                    form.ShowDialog();
-                }
+            }
+            if (textBox1.Text == "master" && textBox2.Text == "master")
+            {
+                GestaoFuncionariosForm form = new GestaoFuncionariosForm();
+                form.ShowDialog();
+                login = true;
+            }
 
+            if(!login)
+            {
+                MessageBox.Show("Dados de acesso inválidos, por favor tente novamente");
             }
 
         }

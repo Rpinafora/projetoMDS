@@ -57,12 +57,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Adicionar\AdicionarEspecializacaoForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Adicionar\AdicionarEspecializacaoForm.Designer.cs">
-      <DependentUpon>AdicionarEspecializacaoForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Adicionar\AdicionarConsultaForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,12 +117,6 @@
     <Compile Include="Doutores.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
-    <Compile Include="Adicionar\EditarEspecializacao.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Adicionar\EditarEspecializacao.Designer.cs">
-      <DependentUpon>EditarEspecializacao.cs</DependentUpon>
-    </Compile>
     <Compile Include="Adicionar\EditarPacienteForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +125,24 @@
     </Compile>
     <Compile Include="Especializacoes.cs">
       <DependentUpon>Modelo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Especializacoes\AdicionarEspecializacaoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Especializacoes\AdicionarEspecializacaoForm.Designer.cs">
+      <DependentUpon>AdicionarEspecializacaoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Especializacoes\EditarEspecializacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Especializacoes\EditarEspecializacao.Designer.cs">
+      <DependentUpon>EditarEspecializacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Especializacoes\GestaoEspecializacoesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Especializacoes\GestaoEspecializacoesForm.Designer.cs">
+      <DependentUpon>GestaoEspecializacoesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="FuncionarioForm.cs">
       <SubType>Form</SubType>
@@ -167,12 +173,6 @@
     </Compile>
     <Compile Include="Gestão\GestaoDoutoresForm.Designer.cs">
       <DependentUpon>GestaoDoutoresForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Gestão\GestaoEspecializacoesForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Gestão\GestaoEspecializacoesForm.Designer.cs">
-      <DependentUpon>GestaoEspecializacoesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Gestão\GestaoFuncionariosForm.cs">
       <SubType>Form</SubType>
@@ -229,9 +229,6 @@
     <EmbeddedResource Include="Adicionar\AdicionarDoutorForm.resx">
       <DependentUpon>AdicionarDoutorForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Adicionar\AdicionarEspecializacaoForm.resx">
-      <DependentUpon>AdicionarEspecializacaoForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Adicionar\AdicionarFuncionarioForm.resx">
       <DependentUpon>AdicionarFuncionarioForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -256,8 +253,14 @@
     <EmbeddedResource Include="DetalhesConsultaForm.resx">
       <DependentUpon>DetalhesConsultaForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Adicionar\EditarEspecializacao.resx">
+    <EmbeddedResource Include="Especializacoes\AdicionarEspecializacaoForm.resx">
+      <DependentUpon>AdicionarEspecializacaoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Especializacoes\EditarEspecializacao.resx">
       <DependentUpon>EditarEspecializacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Especializacoes\GestaoEspecializacoesForm.resx">
+      <DependentUpon>GestaoEspecializacoesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FuncionarioForm.resx">
       <DependentUpon>FuncionarioForm.cs</DependentUpon>
@@ -273,9 +276,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Gestão\GestaoDoutoresForm.resx">
       <DependentUpon>GestaoDoutoresForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Gestão\GestaoEspecializacoesForm.resx">
-      <DependentUpon>GestaoEspecializacoesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gestão\GestaoFuncionariosForm.resx">
       <DependentUpon>GestaoFuncionariosForm.cs</DependentUpon>
@@ -332,7 +332,12 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="ConsultasRegistadas\" />
+    <Folder Include="Consultas\" />
+    <Folder Include="Doutores\" />
+    <Folder Include="Funcionarios\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
