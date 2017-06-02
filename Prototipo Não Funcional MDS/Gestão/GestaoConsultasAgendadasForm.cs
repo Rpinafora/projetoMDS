@@ -20,28 +20,16 @@ namespace Prototipo_Não_Funcional_MDS
             refreshlistaConsultasAgendadas();
             
         }
-        //ESTE EVENTO CHAMA O FORMULARIO "DETALHESCONSULTA" POREM RECEBE COMO PARAMETROS UMA CONSULTA SELECIONADA PARA QUE SEJAM CARREGADOS OS DADOS DESSA CONSULTA.
-        //ESTE EVENTO ESTARA ASSOCIADO AO DOUBLE_CLICK NA LIST_BOX_CONSULTAS
-        private void EventoMostrarDadosConsulta(object sender, EventArgs e)
-        {
-            DetalhesConsultaForm form = new DetalhesConsultaForm((Consultas)lbx_consultas.SelectedItem);
-            DialogResult resultado = form.ShowDialog();
-
-            if (resultado == DialogResult.OK)
-            {
-                container.SaveChanges();
-            }
-        }
 
         //ESTE EVENTO PROCURA NA BASE DE DADOS A CONSULTA QUE TEM O MESMO ID QUE A CONSULTA SELECIONADA E ELEMINA-A
         //DANDO EM SEGUIDA SAVE AO CONTAINER E POSTERIORMENTE ATUALIZA A LISTA DE CONSULTAS
         private void EventoEliminarConsulta(object sender, EventArgs e)
         {
-            string id_consulta = lbx_consultas.SelectedItem.ToString();
+            Consultas consulta_selecionada = (Consultas)lbx_consultas.SelectedItem;
 
             foreach (Consultas consulta in container.ConsultasSet)
             {
-                if (id_consulta == consulta.Id.ToString())
+                if (consulta_selecionada.Id == consulta.Id)
                 {
                     container.ConsultasSet.Remove(consulta);
                 }
@@ -54,6 +42,24 @@ namespace Prototipo_Não_Funcional_MDS
         {
             Gestao_Arquivo form = new Gestao_Arquivo();
             form.ShowDialog();
+        }
+        private void EventoDetalhesConsulta(object sender, EventArgs e)
+        {
+            if (lbx_consultas.SelectedItem == null)
+            {
+                MessageBox.Show("Selecione uma consulta");
+            }
+            else
+            {
+                DetalhesConsultaForm form = new DetalhesConsultaForm((Consultas)lbx_consultas.SelectedItem);
+                DialogResult resultado = form.ShowDialog();
+
+                if (resultado == DialogResult.OK)
+                {
+                    container.SaveChanges();
+                }
+            }
+            
         }
 
         //AO SER CHAMADO, ESTE METODO CARREGA PARA A LIST_BOX_CONSULTAS, AS CONSULTAS GUARDADAS NA BASE DE DADOS.

@@ -64,7 +64,7 @@
             this.lbx_consultas.Name = "lbx_consultas";
             this.lbx_consultas.Size = new System.Drawing.Size(312, 260);
             this.lbx_consultas.TabIndex = 5;
-            this.lbx_consultas.SelectedIndexChanged += new System.EventHandler(this.EventoMostrarDadosConsulta);
+            this.lbx_consultas.DoubleClick += new System.EventHandler(this.EventoDetalhesConsulta);
             // 
             // button4
             // 
