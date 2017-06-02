@@ -37,6 +37,7 @@ namespace Prototipo_Não_Funcional_MDS
             detalhes_consulta.sintomas = tbx_sintomas.Text;
             detalhes_consulta.diagonostico = tbx_diagn_medico.Text;
             detalhes_consulta.obs = tbx_obs.Text;
+            detalhes_consulta.estado = "Consulta realizada";
 
             DialogResult = DialogResult.OK;
             Close();

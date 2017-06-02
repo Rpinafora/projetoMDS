@@ -57,6 +57,7 @@ namespace Prototipo_Não_Funcional_MDS
                 if (resultado == DialogResult.OK)
                 {
                     container.SaveChanges();
+                    refreshlistaConsultasAgendadas();
                 }
             }
             
@@ -68,7 +69,13 @@ namespace Prototipo_Não_Funcional_MDS
         private void refreshlistaConsultasAgendadas()
         {
             lbx_consultas.Items.Clear();
-            lbx_consultas.Items.AddRange(container.ConsultasSet.ToArray());
+            foreach (Consultas consulta in container.ConsultasSet)
+            {
+                if (consulta.estado == "Agendada")
+                {
+                    lbx_consultas.Items.Add(consulta);
+                }
+            }
         }
     }
 }

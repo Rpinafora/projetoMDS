@@ -35,9 +35,10 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(15, 156);
+            this.button4.Location = new System.Drawing.Point(20, 192);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(308, 23);
+            this.button4.Size = new System.Drawing.Size(411, 28);
             this.button4.TabIndex = 14;
             this.button4.Text = "Consultas Agendadas";
             this.button4.UseVisualStyleBackColor = true;
@@ -46,35 +47,33 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 17);
+            this.label1.Location = new System.Drawing.Point(16, 21);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 13);
+            this.label1.Size = new System.Drawing.Size(150, 17);
             this.label1.TabIndex = 12;
             this.label1.Text = "Consultas Agendadas:";
             // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Items.AddRange(new object[] {
-            "Exemplo 1",
-            "Exemplo 2",
-            "Exemplo 3",
-            "Exemplo 4",
-            "Exemplo 5"});
-            this.listBox1.Location = new System.Drawing.Point(12, 37);
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(16, 46);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(311, 95);
+            this.listBox1.Size = new System.Drawing.Size(413, 116);
             this.listBox1.TabIndex = 11;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // Gestao_Arquivo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(335, 219);
+            this.ClientSize = new System.Drawing.Size(447, 270);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBox1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Gestao_Arquivo";
             this.Text = "Gestao_Arquivo";
             this.ResumeLayout(false);

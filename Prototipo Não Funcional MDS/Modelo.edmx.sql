@@ -2,13 +2,13 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 06/02/2017 13:34:57
--- Generated from EDMX file: C:\Users\2160433\Documents\GitHub\projetoMDS\Prototipo Não Funcional MDS\Modelo.edmx
+-- Date Created: 06/02/2017 18:23:08
+-- Generated from EDMX file: C:\Users\User\Desktop\projetoMDS\Prototipo Não Funcional MDS\Modelo.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
 GO
-USE [BDMDS];
+USE [basedadosMDS];
 GO
 IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
 GO
