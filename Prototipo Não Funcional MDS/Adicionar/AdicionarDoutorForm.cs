@@ -36,7 +36,7 @@ namespace Prototipo_Não_Funcional_MDS
                 erro = true;
             if (!txt_email.Text.Contains("@"))
                 erro = true;
-            if (clbx_especializacoes.SelectedItems.Cast<Especializacoes>().Count() == 0)
+            if (clbx_especializacoes.CheckedItems.Cast<Especializacoes>().Count() == 0)
                 erro = true;
 
             if (!erro)
@@ -52,7 +52,7 @@ namespace Prototipo_Não_Funcional_MDS
                     numTelefone = numTelefone,
                     password = "default",
                     dataNascimento = dt_dataNasc.Value,
-                    Especializacoes = clbx_especializacoes.SelectedItems.Cast<Especializacoes>().ToList()
+                    Especializacoes = clbx_especializacoes.CheckedItems.Cast<Especializacoes>().ToList()
                 };
                 DialogResult = DialogResult.OK;
             }
