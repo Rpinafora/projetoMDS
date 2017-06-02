@@ -23,19 +23,25 @@ namespace Prototipo_Não_Funcional_MDS
         public void refreshListaConsultas()
         {
             listBox_consultas.Items.Clear();
-            listBox_consultas.Items.AddRange(container.ConsultasSet.ToArray());
+            foreach (Consultas consulta in container.ConsultasSet)
+            {
+                if (consulta.estado == "Agendada")
+                {
+                    listBox_consultas.Items.Add(consulta);
+                }
+            }
         }
 
         private void button_editarConsulta_Click(object sender, EventArgs e)
         {
-           /*
+            EditarConsultaForm form = new EditarConsultaForm();
             form.consulta = consultaSelecionada;
             DialogResult resultado = form.ShowDialog();
             if (form.DialogResult == DialogResult.OK)
             {
                 container.SaveChanges();
                 refreshListaConsultas();
-            }*/
+            }
         }
 
         private void button_registarConsulta_Click(object sender, EventArgs e)

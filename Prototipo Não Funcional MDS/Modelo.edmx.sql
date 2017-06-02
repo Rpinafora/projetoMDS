@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 06/02/2017 10:51:53
+-- Date Created: 06/02/2017 13:34:57
 -- Generated from EDMX file: C:\Users\2160433\Documents\GitHub\projetoMDS\Prototipo Não Funcional MDS\Modelo.edmx
 -- --------------------------------------------------
 
@@ -28,6 +28,9 @@ IF OBJECT_ID(N'[dbo].[FK_DoutoresEspecializacoes_Doutores]', 'F') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[FK_DoutoresEspecializacoes_Especializacoes]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[DoutoresEspecializacoes] DROP CONSTRAINT [FK_DoutoresEspecializacoes_Especializacoes];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ConsultasEspecializacoes]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ConsultasSet] DROP CONSTRAINT [FK_ConsultasEspecializacoes];
 GO
 IF OBJECT_ID(N'[dbo].[FK_Pacientes_inherits_Pessoas]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[PessoasSet_Pacientes] DROP CONSTRAINT [FK_Pacientes_inherits_Pessoas];
@@ -88,7 +91,9 @@ CREATE TABLE [dbo].[ConsultasSet] (
     [PacientesId] int  NOT NULL,
     [DoutoresId] int  NOT NULL,
     [data] datetime  NOT NULL,
-    [hora] datetime  NOT NULL
+    [hora] datetime  NOT NULL,
+    [EspecializacoesId] int  NOT NULL,
+    [estado] nvarchar(max)  NOT NULL
 );
 GO
 
@@ -236,6 +241,21 @@ GO
 CREATE INDEX [IX_FK_DoutoresEspecializacoes_Especializacoes]
 ON [dbo].[DoutoresEspecializacoes]
     ([Especializacoes_Id]);
+GO
+
+-- Creating foreign key on [EspecializacoesId] in table 'ConsultasSet'
+ALTER TABLE [dbo].[ConsultasSet]
+ADD CONSTRAINT [FK_ConsultasEspecializacoes]
+    FOREIGN KEY ([EspecializacoesId])
+    REFERENCES [dbo].[EspecializacoesSet]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_ConsultasEspecializacoes'
+CREATE INDEX [IX_FK_ConsultasEspecializacoes]
+ON [dbo].[ConsultasSet]
+    ([EspecializacoesId]);
 GO
 
 -- Creating foreign key on [Id] in table 'PessoasSet_Pacientes'

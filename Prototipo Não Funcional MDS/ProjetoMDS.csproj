@@ -93,6 +93,12 @@
     <Compile Include="Adicionar\ConsultaRegistoForm.Designer.cs">
       <DependentUpon>ConsultaRegistoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Adicionar\EditarConsultaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adicionar\EditarConsultaForm.Designer.cs">
+      <DependentUpon>EditarConsultaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Adicionar\EditarDoutorForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -233,6 +239,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Adicionar\ConsultaRegistoForm.resx">
       <DependentUpon>ConsultaRegistoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Adicionar\EditarConsultaForm.resx">
+      <DependentUpon>EditarConsultaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Adicionar\EditarDoutorForm.resx">
       <DependentUpon>EditarDoutorForm.cs</DependentUpon>

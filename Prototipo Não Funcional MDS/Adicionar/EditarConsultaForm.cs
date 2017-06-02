@@ -26,8 +26,34 @@ namespace Prototipo_Não_Funcional_MDS
             dateTimePicker_dataConsulta.Value = consulta.data;
             dateTimePicker_hora.Value = consulta.hora;
             textBox_sintomas.Text = consulta.sintomas;
-            //comboBox_especializacao.SelectedItem = 
+            comboBox_especializacao.SelectedItem = consulta.Especializacoes;
+            comboBox_especializacao.Text = consulta.Especializacoes.nome;
+            refreshDoutores();
+            comboBox_doutoresDisponiveis.SelectedItem = consulta.Doutores;
+            comboBox_doutoresDisponiveis.Text = consulta.Doutores.nome;
 
+        }
+
+        private void button_editar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox_doutoresDisponiveis_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            refreshDoutores();
+        }
+
+        private void refreshDoutores()
+        {
+            comboBox_doutoresDisponiveis.Items.Clear();
+            foreach (Doutores doutor in container.PessoasSet.OfType<Doutores>())
+            {
+                if (doutor.Especializacoes.Contains(comboBox_especializacao.SelectedItem))
+                {
+                    comboBox_doutoresDisponiveis.Items.Add(doutor);
+                }
+            }
         }
     }
 }

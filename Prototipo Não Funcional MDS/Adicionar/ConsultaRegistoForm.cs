@@ -16,6 +16,7 @@ namespace Prototipo_Não_Funcional_MDS
         private ModeloContainer container;
         public Consultas novaConsulta;
         private Doutores doutor;
+        private Especializacoes especializacao;
 
         public ConsultaRegistoForm()
         {
@@ -34,6 +35,7 @@ namespace Prototipo_Não_Funcional_MDS
             if (textBox_sintomas.Text.Length != 0 && comboBox_doutoresDisponiveis.SelectedItem != null && comboBox_especializacao.SelectedItem != null)
             {
                 doutor = (Doutores)comboBox_doutoresDisponiveis.SelectedItem;
+                especializacao = (Especializacoes)comboBox_especializacao.SelectedItem;
                 novaConsulta = new Consultas
                 {
                     sintomas = textBox_sintomas.Text,
@@ -41,7 +43,9 @@ namespace Prototipo_Não_Funcional_MDS
                     data = dateTimePicker_dataConsulta.Value,
                     DoutoresId = doutor.Id,
                     PacientesId = paciente.Id,
-                    hora = dateTimePicker_hora.Value
+                    hora = dateTimePicker_hora.Value,
+                    EspecializacoesId = especializacao.Id,
+                    estado = "Agendada"
 
                 };
                 DialogResult = DialogResult.OK;

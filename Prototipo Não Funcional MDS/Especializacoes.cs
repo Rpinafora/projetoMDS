@@ -18,6 +18,7 @@ namespace Prototipo_Não_Funcional_MDS
         public Especializacoes()
         {
             this.Doutores = new HashSet<Doutores>();
+            this.Consultas = new HashSet<Consultas>();
         }
     
         public int Id { get; set; }
@@ -26,5 +27,7 @@ namespace Prototipo_Não_Funcional_MDS
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Doutores> Doutores { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Consultas> Consultas { get; set; }
     }
 }

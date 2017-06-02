@@ -86,6 +86,7 @@
             this.button_editar.TabIndex = 20;
             this.button_editar.Text = "Editar";
             this.button_editar.UseVisualStyleBackColor = true;
+            this.button_editar.Click += new System.EventHandler(this.button_editar_Click);
             // 
             // comboBox_doutoresDisponiveis
             // 
@@ -94,6 +95,7 @@
             this.comboBox_doutoresDisponiveis.Name = "comboBox_doutoresDisponiveis";
             this.comboBox_doutoresDisponiveis.Size = new System.Drawing.Size(121, 21);
             this.comboBox_doutoresDisponiveis.TabIndex = 19;
+            this.comboBox_doutoresDisponiveis.SelectedIndexChanged += new System.EventHandler(this.comboBox_doutoresDisponiveis_SelectedIndexChanged);
             // 
             // label3
             // 

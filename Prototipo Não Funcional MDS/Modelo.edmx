@@ -29,6 +29,10 @@
       <End Role="Especializacoes" EntitySet="EspecializacoesSet" />
       <End Role="DoutoresEspecializacoes" EntitySet="DoutoresEspecializacoes" />
     </AssociationSet>
+    <AssociationSet Name="ConsultasEspecializacoes" Association="Modelo.Store.ConsultasEspecializacoes">
+      <End Role="Consultas" EntitySet="ConsultasSet" />
+      <End Role="Especializacoes" EntitySet="EspecializacoesSet" />
+    </AssociationSet>
     <AssociationSet Name="FK_Pacientes_inherits_Pessoas" Association="Modelo.Store.FK_Pacientes_inherits_Pessoas">
       <End Role="Pessoas" EntitySet="PessoasSet" />
       <End Role="Pacientes" EntitySet="PessoasSet_Pacientes" />
@@ -64,6 +68,8 @@
     <Property Name="DoutoresId" Type="int" Nullable="false" />
     <Property Name="data" Type="datetime" Nullable="false" />
     <Property Name="hora" Type="datetime" Nullable="false" />
+    <Property Name="EspecializacoesId" Type="int" Nullable="false" />
+    <Property Name="estado" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="EspecializacoesSet">
     <Key>
@@ -129,6 +135,18 @@
       </Principal>
       <Dependent Role="Consultas">
         <PropertyRef Name="DoutoresId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ConsultasEspecializacoes">
+    <End Role="Consultas" Type="Modelo.Store.ConsultasSet" Multiplicity="*" />
+    <End Role="Especializacoes" Type="Modelo.Store.EspecializacoesSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Especializacoes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Consultas">
+        <PropertyRef Name="EspecializacoesId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -218,6 +236,10 @@
             <End Role="Doutores" EntitySet="PessoasSet" />
             <End Role="Especializacoes" EntitySet="EspecializacoesSet" />
           </AssociationSet>
+          <AssociationSet Name="ConsultasEspecializacoes" Association="Modelo.ConsultasEspecializacoes">
+            <End Role="Consultas" EntitySet="ConsultasSet" />
+            <End Role="Especializacoes" EntitySet="EspecializacoesSet" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Pessoas">
           <Key>
@@ -250,6 +272,9 @@
           <Property Name="DoutoresId" Type="Int32" Nullable="false" />
           <Property Name="data" Type="DateTime" Nullable="false" />
           <Property Name="hora" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Especializacoes" Relationship="Modelo.ConsultasEspecializacoes" FromRole="Consultas" ToRole="Especializacoes" />
+          <Property Name="EspecializacoesId" Type="Int32" Nullable="false" />
+          <Property Name="estado" Type="String" Nullable="false" />
         </EntityType>
         <Association Name="ConsultasPacientes">
           <End Type="Modelo.Consultas" Role="Consultas" Multiplicity="*" />
@@ -276,6 +301,7 @@
           <Property Name="nome" Type="String" Nullable="false" />
           <Property Name="obs" Type="String" Nullable="true" />
           <NavigationProperty Name="Doutores" Relationship="Modelo.DoutoresEspecializacoes" FromRole="Especializacoes" ToRole="Doutores" />
+          <NavigationProperty Name="Consultas" Relationship="Modelo.ConsultasEspecializacoes" FromRole="Especializacoes" ToRole="Consultas" />
         </EntityType>
         <EntityType Name="Doutores" BaseType="Modelo.Utilizadores" >
           <NavigationProperty Name="Consultas" Relationship="Modelo.DoutoresConsultas" FromRole="Doutores" ToRole="Consultas" />
@@ -298,6 +324,18 @@
         <Association Name="DoutoresEspecializacoes">
           <End Type="Modelo.Doutores" Role="Doutores" Multiplicity="*" />
           <End Type="Modelo.Especializacoes" Role="Especializacoes" Multiplicity="*" />
+        </Association>
+        <Association Name="ConsultasEspecializacoes">
+          <End Type="Modelo.Consultas" Role="Consultas" Multiplicity="*" />
+          <End Type="Modelo.Especializacoes" Role="Especializacoes" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Especializacoes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Consultas">
+              <PropertyRef Name="EspecializacoesId" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
       </Schema>
     </edmx:ConceptualModels>
@@ -351,6 +389,8 @@
           <ScalarProperty Name="DoutoresId" ColumnName="DoutoresId" />
           <ScalarProperty Name="data" ColumnName="data" />
           <ScalarProperty Name="hora" ColumnName="hora" />
+          <ScalarProperty Name="EspecializacoesId" ColumnName="EspecializacoesId" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
